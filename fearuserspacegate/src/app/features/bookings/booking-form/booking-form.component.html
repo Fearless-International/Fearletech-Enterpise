@@ -1,0 +1,163 @@
+<div class="booking-form-header">
+  <h1>{{ isEditMode ? 'Edit Booking' : 'Create New Booking' }}</h1><div class="booking-form-container">
+  <p-card>
+    <h1 class="page-title">{{ isEditMode ? 'Edit Booking' : 'Create New Booking' }}</h1>
+    
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div class="p-fluid p-formgrid grid">
+        <!-- Service Selection -->
+        <div class="field col-12 md:col-6">
+          <label for="service">Service *</label>
+          <p-dropdown 
+            id="service"
+            [options]="services" 
+            formControlName="service" 
+            placeholder="Select a service"
+            optionLabel="label"
+            optionValue="value"
+            [showClear]="true"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('service')?.invalid && bookingForm.get('service')?.touched}"
+          ></p-dropdown>
+          <small *ngIf="bookingForm.get('service')?.invalid && bookingForm.get('service')?.touched" class="p-error">
+            {{ getErrorMessage('service') }}
+          </small>
+        </div>
+        
+        <!-- Status Selection (Only in edit mode) -->
+        <div class="field col-12 md:col-6" *ngIf="isEditMode">
+          <label for="status">Status *</label>
+          <p-dropdown 
+            id="status"
+            [options]="statuses" 
+            formControlName="status" 
+            placeholder="Select status"
+            optionLabel="label"
+            optionValue="value"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('status')?.invalid && bookingForm.get('status')?.touched}"
+          ></p-dropdown>
+          <small *ngIf="bookingForm.get('status')?.invalid && bookingForm.get('status')?.touched" class="p-error">
+            {{ getErrorMessage('status') }}
+          </small>
+        </div>
+        
+        <!-- Date Selection -->
+        <div class="field col-12 md:col-6">
+          <label for="date">Date *</label>
+          <p-calendar 
+            id="date"
+            formControlName="date" 
+            [minDate]="currentDate"
+            [readonlyInput]="true"
+            [showIcon]="true"
+            dateFormat="yy-mm-dd"
+            placeholder="Select a date"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('date')?.invalid && bookingForm.get('date')?.touched}"
+          ></p-calendar>
+          <small *ngIf="bookingForm.get('date')?.invalid && bookingForm.get('date')?.touched" class="p-error">
+            {{ getErrorMessage('date') }}
+          </small>
+        </div>
+        
+        <!-- Time Selection -->
+        <div class="field col-12 md:col-6">
+          <label for="time">Time *</label>
+          <p-calendar 
+            id="time"
+            formControlName="time" 
+            [timeOnly]="true"
+            hourFormat="24"
+            placeholder="Select a time"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('time')?.invalid && bookingForm.get('time')?.touched}"
+          ></p-calendar>
+          <small *ngIf="bookingForm.get('time')?.invalid && bookingForm.get('time')?.touched" class="p-error">
+            {{ getErrorMessage('time') }}
+          </small>
+        </div>
+        
+        <!-- Client Information -->
+        <div class="field col-12">
+          <h3 class="section-title">Client Information</h3>
+        </div>
+        
+        <!-- Name -->
+        <div class="field col-12 md:col-6">
+          <label for="userName">Name *</label>
+          <input 
+            id="userName"
+            type="text" 
+            pInputText 
+            formControlName="userName"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('userName')?.invalid && bookingForm.get('userName')?.touched}"
+          />
+          <small *ngIf="bookingForm.get('userName')?.invalid && bookingForm.get('userName')?.touched" class="p-error">
+            {{ getErrorMessage('userName') }}
+          </small>
+        </div>
+        
+        <!-- Email -->
+        <div class="field col-12 md:col-6">
+          <label for="userEmail">Email *</label>
+          <input 
+            id="userEmail"
+            type="email" 
+            pInputText 
+            formControlName="userEmail"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('userEmail')?.invalid && bookingForm.get('userEmail')?.touched}"
+          />
+          <small *ngIf="bookingForm.get('userEmail')?.invalid && bookingForm.get('userEmail')?.touched" class="p-error">
+            {{ getErrorMessage('userEmail') }}
+          </small>
+        </div>
+        
+        <!-- Phone -->
+        <div class="field col-12 md:col-6">
+          <label for="userPhone">Phone *</label>
+          <input 
+            id="userPhone"
+            type="tel" 
+            pInputText 
+            formControlName="userPhone"
+            placeholder="10-digit number"
+            [ngClass]="{'ng-invalid ng-dirty': bookingForm.get('userPhone')?.invalid && bookingForm.get('userPhone')?.touched}"
+          />
+          <small *ngIf="bookingForm.get('userPhone')?.invalid && bookingForm.get('userPhone')?.touched" class="p-error">
+            {{ getErrorMessage('userPhone') }}
+          </small>
+        </div>
+        
+        <!-- Notes -->
+        <div class="field col-12">
+          <label for="notes">Notes</label>
+          <textarea 
+            id="notes"
+            pInputTextarea 
+            formControlName="notes"
+            rows="5"
+            placeholder="Enter any special requests or notes"
+          ></textarea>
+        </div>
+        
+        <!-- Form Buttons -->
+        <div class="field col-12 button-container">
+          <button 
+            pButton 
+            type="button" 
+            label="Cancel" 
+            class="p-button-outlined p-button-secondary" 
+            (click)="cancel()"
+            [disabled]="isSubmitting"
+          ></button>
+          <button 
+            pButton 
+            type="submit" 
+            [label]="isEditMode ? 'Update Booking' : 'Create Booking'"
+            [disabled]="bookingForm.invalid || isSubmitting"
+            [loading]="isSubmitting"
+          ></button>
+        </div>
+      </div>
+    </form>
+  </p-card>
+</div>
+
+<p-toast></p-toast>

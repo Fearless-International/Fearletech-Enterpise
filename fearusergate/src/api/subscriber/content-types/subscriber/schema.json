@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscribers",
+  "info": {
+    "singularName": "subscriber",
+    "pluralName": "subscribers",
+    "displayName": "Subscriber"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "SubscriptionDate": {
+      "type": "datetime",
+      "required": true,
+      "default": "2025-04-22T00:00:00.000Z"
+    },
+    "Statuses": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "unsubscribed"
+      ],
+      "default": "active",
+      "required": true
+    },
+    "Preferences": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

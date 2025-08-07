@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "statuses": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "processed"
+      ],
+      "default": "pending"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::system.system"
+    },
+    "isRead": {
+      "type": "boolean",
+      "default": false
+    },
+    "adminReply": {
+      "type": "text"
+    },
+    "repliedAt": {
+      "type": "datetime"
+    }
+  }
+}

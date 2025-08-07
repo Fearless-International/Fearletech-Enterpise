@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_user_infos",
+  "info": {
+    "displayName": "user-info",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

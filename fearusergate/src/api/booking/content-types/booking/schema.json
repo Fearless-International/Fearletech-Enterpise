@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "service": {
+      "type": "text",
+      "required": true,
+      "default": "Services Types"
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "default": "2025-04-21"
+    },
+    "time": {
+      "type": "time",
+      "required": true,
+      "default": "00:00:00.000"
+    },
+    "statuses": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled"
+      ],
+      "required": true
+    },
+    "notes": {
+      "type": "richtext",
+      "required": true
+    },
+    "user": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.user-info"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::booking.booking",
+      "inversedBy": "bookings"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "owner"
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact",
+      "mappedBy": "user"
+    }
+  }
+}

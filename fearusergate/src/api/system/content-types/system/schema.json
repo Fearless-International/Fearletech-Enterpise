@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "systems",
+  "info": {
+    "singularName": "system",
+    "pluralName": "systems",
+    "displayName": "System",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "resetToken": {
+      "type": "text",
+      "private": true,
+      "required": true,
+      "unique": true
+    },
+    "verificationToken": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "private": true
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
