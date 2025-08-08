@@ -14,4 +14,9 @@ export default defineConfig({
       allow: ['..'], // allow access to parent folders (like ../fearbackend)
     },
   },
+  build: {
+    rollupOptions: {
+      external: ['axios']
+    }
+  }
 })
