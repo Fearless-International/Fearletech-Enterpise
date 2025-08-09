@@ -13,7 +13,7 @@ import { DashboardService, ChartData, DashboardStats } from './services/dashboar
 import { AuthService } from '../../core/services/auth.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Subscription, interval } from 'rxjs';
-import 'primeicons/primeicons.css';
+
 
 @Component({
   selector: 'app-dashboard',
