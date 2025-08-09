@@ -1,0 +1,91 @@
+<div class="dashboard-container" [@fadeInUp]>
+  <!-- Header Section with Time and User -->
+  <div class="dashboard-header">
+    <div class="welcome-section">
+      <h1>Welcome back, {{currentUser}}</h1>
+      <p class="current-time">{{currentTime | date:'yyyy-MM-dd HH:mm:ss'}} UTC</p>
+    </div>
+    
+    <div class="d-flex justify-content-end mb-3">
+      <button pButton label="Refresh Data" icon="pi pi-refresh" 
+              class="p-button-outlined" (click)="manualRefresh()"
+              [disabled]="loading"></button>
+    </div>
+    
+    <div class="period-selector">
+      <p-selectButton style="gap: 20px; font-size: 10px; background-color: #454545; padding: 15px; color: white; border-radius: 5px;" 
+        [options]="periodOptions" 
+        [(ngModel)]="selectedPeriod"
+        (onChange)="onPeriodChange($event)"
+      ></p-selectButton>
+    </div>
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3" *ngFor="let stat of [
+      { icon: 'calendar', label: 'Your Bookings', value: statistics.totalBookings, growth: statistics.bookingGrowth },
+      { icon: 'clock', label: 'Pending', value: statistics.pendingBookings },
+      { icon: 'check-circle', label: 'Completed', value: statistics.completedBookings },
+      { icon: 'dollar', label: 'Your Spending', value: statistics.revenue, prefix: '$', growth: statistics.revenueGrowth }
+    ]">
+      <p-card styleClass="stats-card">
+        <div class="stats-content">
+          <div class="stats-icon">
+            <i class="pi pi-{{stat.icon}}"></i>
+          </div>
+          <div class="stats-info">
+            <h3>{{stat.label}}</h3>
+            <h2>{{stat.prefix || ''}}{{stat.value | number}}</h2>
+            <div class="growth-indicator" *ngIf="stat.growth !== undefined">
+              <i class="pi" [ngClass]="stat.growth >= 0 ? 'pi-arrow-up' : 'pi-arrow-down'"></i>
+              <span [ngClass]="stat.growth >= 0 ? 'positive' : 'negative'">
+                {{Math.abs(stat.growth)}}%
+              </span>
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Chart and Recent Bookings -->
+  <div class="grid mt-4">
+    <div class="col-12 lg:col-8">
+      <p-card header="Your Booking Analytics">
+        <p-chart type="line" [data]="chartData" [options]="chartOptions" height="400"></p-chart>
+      </p-card>
+    </div>
+    <div class="col-12 lg:col-4">
+      <p-card header="Your Recent Bookings">
+        <p-table [value]="recentBookings" [scrollable]="true" scrollHeight="400px">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-booking>
+            <tr>
+              <td>{{booking.service || 'N/A'}}</td>
+              <td>{{booking.date | date:'short'}}</td>
+              <td>
+                <span [class]="'status-badge status-' + booking.status.toLowerCase()">
+                  {{booking.status}}
+                </span>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="3" class="text-center">You don't have any recent bookings</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-card>
+    </div>
+  </div>
+</div>
+
+<p-toast></p-toast>
