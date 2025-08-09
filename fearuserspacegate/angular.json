@@ -30,19 +30,16 @@
                 "glob": "**/*",
                 "input": "public",
                 "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/primeicons/fonts",
-                "output": "assets/fonts/primeicons"
               }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,16 +94,10 @@
                 "glob": "**/*",
                 "input": "public",
                 "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/primeicons/fonts",
-                "output": "assets/fonts/primeicons"
               }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []
