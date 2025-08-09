@@ -28,12 +28,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               },
               {
                 "glob": "**/*",
                 "input": "node_modules/primeicons/fonts",
-                "output": "assets/fonts"
+                "output": "assets/fonts/primeicons"
               }
             ],
             "styles": [
@@ -94,12 +95,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               },
               {
                 "glob": "**/*",
                 "input": "node_modules/primeicons/fonts",
-                "output": "assets/fonts"
+                "output": "assets/fonts/primeicons"
               }
             ],
             "styles": [
