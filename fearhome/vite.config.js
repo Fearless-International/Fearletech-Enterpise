@@ -5,7 +5,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   define: {
-    __PAYLOAD_URL__: JSON.stringify(process.env.PAYLOAD_URL || 'https://content.fealessint.com')
+    __PAYLOAD_URL__: JSON.stringify(process.env.PAYLOAD_URL || 'https://content.fearlessint.com')
   },
   resolve: {
     alias: {
