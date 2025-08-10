@@ -4,6 +4,9 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  define: {
+    __PAYLOAD_URL__: JSON.stringify(process.env.PAYLOAD_URL || 'https://content.fealessint.com')
+  },
   resolve: {
     alias: {
       '@backend': path.resolve(__dirname, '../fearbackend/src'),
