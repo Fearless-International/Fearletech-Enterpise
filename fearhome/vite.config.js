@@ -19,7 +19,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['axios']
+      // Removed axios from external - this was causing the deployment issue
+      // external: ['axios'] <- This line has been removed
     }
   }
 })
