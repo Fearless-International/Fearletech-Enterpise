@@ -8,9 +8,8 @@ export default defineConfig({
     __PAYLOAD_URL__: JSON.stringify(process.env.PAYLOAD_URL || 'https://content.fearlessint.com')
   },
   resolve: {
-    alias: {
-      '@backend': path.resolve(__dirname, '../bckend/src'),
-    },
+    // Removed @backend alias since CMS is hosted on Render
+    // Frontend should make API calls instead of importing backend files
   },
   server: {
     fs: {
@@ -21,8 +20,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          http: ['axios']
+          vendor: ['react', 'react-dom']
         }
       }
     }
