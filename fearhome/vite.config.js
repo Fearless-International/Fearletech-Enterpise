@@ -9,7 +9,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@backend': path.resolve(__dirname, '../fearbackend/src'),
+      '@backend': path.resolve(__dirname, '../bckend/src'),
     },
   },
   server: {
