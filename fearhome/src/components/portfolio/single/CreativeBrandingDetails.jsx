@@ -16,21 +16,19 @@ function CreativeBrandingDetails() {
 
     useEffect(() => {
         const fetchProject = async () => {
-            setLoading(true);
-            setError(null);
-            try {
-                const response = await payloadClient.get('/creative-branding-projects', {
-                    params: { limit: 1, page: currentPage },
-                });
-                setProject(response.data.docs[0]);
-                setTotalPages(response.data.totalPages);
-            } catch (error) {
-                console.error("Error fetching project:", error);
-                setError("Failed to load project. Please try again later.");
-            } finally {
-                setLoading(false);
-            }
-        };
+    setLoading(true);
+    setError(null);
+    try {
+        const response = await payloadClient.getCreativeBrandingProjects(currentPage);
+        setProject(response.docs[0]);
+        setTotalPages(response.totalPages);
+    } catch (error) {
+        console.error("Error fetching project:", error);
+        setError("Failed to load project. Please try again later.");
+    } finally {
+        setLoading(false);
+    }
+};
 
         fetchProject();
     }, [currentPage]);
