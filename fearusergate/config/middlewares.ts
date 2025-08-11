@@ -15,7 +15,7 @@ export default [
       },
       cors: {
         enabled: true,
-        origin: ['http://localhost:4200', 'http://localhost:5173'], // Allow your front-end's URLs
+        origin: ['https://app.fearlessint.com', 'https://fearlessint.com'], // Allow your front-end's URLs
         headers: ['*'],
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
       },
@@ -26,7 +26,7 @@ export default [
     config: {
       
       headers: '*',
-      origin: ['http://localhost:4200', 'http://localhost:5173'],
+      origin: ['https://app.fearlessint.com', 'https://fearlessint.com'],
       // origin: ['http://localhost:4200', 'http://localhost:5173'], // Allow your front-end's URLs
     }
   },
