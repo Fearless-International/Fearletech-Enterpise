@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { payloadClient } from '../lib/payloadClient';
+import { payloadClient } from '../../../lib/payloadClient';
 import Star2Img from "../../../assets/images/v1/star2.png";
 import './assetss/LogoBrandingDetails.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import payloadClient from "@backend/payloadClient.ts";
+import { payloadClient } from '../../../lib/payloadClient';
 import './assetss/LogoBrandingDetails.css';
 
 function WebDesignDevelopmentDetails() {
