@@ -19,7 +19,15 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['axios']
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          http: ['axios']
+        }
+      }
     }
+  },
+  optimizeDeps: {
+    include: ['axios']
   }
 })
