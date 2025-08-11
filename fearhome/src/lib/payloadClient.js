@@ -1,4 +1,4 @@
-import axios from 'axios';
+import * as axios from 'axios';
 
 // Your Payload CMS URL on Render
 const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://content.fearlessint.com';
