@@ -17,21 +17,18 @@ function ContentCreationDetails() {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            setLoading(true);
-            setError(null);
-            try {
-                const response = await payloadClient.get('/content-creation-projects', {
-                    params: { limit: 10 }, // Fetch up to 10 projects
-                });
-                setProjects(response.data.docs);
-            } catch (error) {
-                console.error("Error fetching projects:", error);
-                setError("Failed to load projects. Please try again later.");
-            } finally {
-                setLoading(false);
-            }
-        };
-
+    setLoading(true);
+    setError(null);
+    try {
+        const response = await payloadClient.getContentCreationProjects();
+        setProjects(response.docs || response);
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+        setError("Failed to load projects. Please try again later.");
+    } finally {
+        setLoading(false);
+    }
+};
         fetchProjects();
     }, []);
 
