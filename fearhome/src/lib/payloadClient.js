@@ -22,5 +22,16 @@ export const payloadClient = {
       console.error('Error fetching project:', error);
       throw error;
     }
+  },
+
+  getContentCreationProjects: async () => {
+    try {
+      const response = await fetch(`${PAYLOAD_API_URL}/api/content-creation-projects?limit=10`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching content creation projects:', error);
+      throw error;
+    }
   }
 };
