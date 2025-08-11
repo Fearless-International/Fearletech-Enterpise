@@ -25,7 +25,12 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Projects, LogoBrandingProjects, VideoEditingAnimationProjects, CreativeBrandingProjects, SocialMediaManagementProjects, ContentCreationProjects], // Add ContentCreationProjects to the collections array
-  cors: ['http://localhost:5173'], // Allow requests from your frontend's origin
+  cors: [
+    'https://fearlessint.com',
+    'https://www.fearlessint.com',
+    'https://fearless-international-fearletech-enterpise.vercel.app',
+    'http://localhost:3000'
+  ], // Allow requests from your frontend's origin
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
