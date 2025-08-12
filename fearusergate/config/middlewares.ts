@@ -13,21 +13,14 @@ export default [
           upgradeInsecureRequests: null,
         },
       },
-      cors: {
-        enabled: true,
-        origin: ['https://app.fearlessint.com', 'https://fearlessint.com', 'https://www.fearlessint.com'], // Allow your front-end's URLs
-        headers: ['*'],
-        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
-      },
     },
   },
   {
     name: 'strapi::cors',
     config: {
-      
-      headers: '*',
       origin: ['https://app.fearlessint.com', 'https://fearlessint.com', 'https://www.fearlessint.com'],
-      // origin: ['http://localhost:4200', 'http://localhost:5173'], // Allow your front-end's URLs
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     }
   },
   'strapi::poweredBy',
