@@ -53,13 +53,14 @@ api.interceptors.request.use(
 export const submitContactForm = async (formData: ContactFormData) => {
   try {
     const response = await api.post('/contacts', {
-      // Remove the "data" wrapper - try direct fields first
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-      status: 'pending' // Check if field is named "status" not "statuses"
+      data: {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        statuses: 'pending'
+      }
     });
     console.log('Response:', response);
     return response.data;
