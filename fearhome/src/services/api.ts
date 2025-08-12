@@ -63,6 +63,7 @@ export const submitContactForm = async (formData: ContactFormData) => {
       }
     });
     console.log('Response:', response);
+    console.log(formData);
     return response.data;
   } catch (error) {
     console.error('Error submitting contact form:', error);
