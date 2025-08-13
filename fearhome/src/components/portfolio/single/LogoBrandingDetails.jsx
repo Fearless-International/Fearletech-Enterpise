@@ -46,7 +46,7 @@ function LogoBrandingDetails() {
                         <div className="aximo-project-single-section">
                             <div className="aximo-project-single-thumb">
                                 <LazyLoadImage
-                                    src={`http://localhost:3000${project.mainImage?.url}`}
+                                    src={`https://content.fearlessint.com${project.mainImage?.url}`}
                                     alt={project.mainImage?.alt || "Main Project"}
                                     effect="blur"
                                 />
@@ -90,7 +90,7 @@ function LogoBrandingDetails() {
                                             {project.secondaryImages?.map((image, index) => (
                                                 <LazyLoadImage
                                                     key={index}
-                                                    src={`http://localhost:3000${image.image?.url}`}
+                                                    src={`https://content.fearlessint.com${image.image?.url}`}
                                                     alt={image.alt || `Secondary Image ${index + 1}`}
                                                     effect="blur"
                                                     style={{ marginBottom: "30px" }}
