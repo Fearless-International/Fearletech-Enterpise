@@ -44,5 +44,16 @@ export const payloadClient = {
       console.error('Error fetching creative branding projects:', error);
       throw error;
     }
-  }
+  },
+
+  getProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+        throw error;
+    }
+}
 };
