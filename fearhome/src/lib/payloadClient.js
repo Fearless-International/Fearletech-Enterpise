@@ -55,5 +55,37 @@ export const payloadClient = {
         console.error('Error fetching projects:', error);
         throw error;
     }
+},
+
+getVideoEditingAnimationProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/video-editing-animation-projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching video editing animation projects:', error);
+        throw error;
+    }
+},
+
+getSocialMediaManagementProjects: async () => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/social-media-management-projects?limit=10`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching social media management projects:', error);
+        throw error;
+    }
+},
+getLogoBrandingProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/logo-branding-projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching logo branding projects:', error);
+        throw error;
+    }
 }
 };

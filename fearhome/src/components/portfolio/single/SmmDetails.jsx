@@ -18,20 +18,18 @@ function SocialMediaManagementDetails() {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            setLoading(true);
-            setError(null);
-            try {
-                const response = await payloadClient.get('/social-media-management-projects', {
-                    params: { limit: 10 }, // Fetch up to 10 projects
-                });
-                setProjects(response.data.docs);
-            } catch (error) {
-                console.error("Error fetching projects:", error);
-                setError("Failed to load projects. Please try again later.");
-            } finally {
-                setLoading(false);
-            }
-        };
+    setLoading(true);
+    setError(null);
+    try {
+        const response = await payloadClient.getSocialMediaManagementProjects();
+        setProjects(response.docs);
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+        setError("Failed to load projects. Please try again later.");
+    } finally {
+        setLoading(false);
+    }
+};
 
         fetchProjects();
     }, []);
