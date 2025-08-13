@@ -42,7 +42,7 @@ function WebDesignDevelopmentDetails() {
                         <div key={project.id} className="aximo-project-single-section">
                             <div className="aximo-project-single-thumb">
                                 <img
-                                    src={`http://localhost:3000${project.mainImage?.url}`}
+                                    src={`https://content.fearlessint.com${project.mainImage?.url}`}
                                     alt="Project Main"
                                 />
                             </div>
