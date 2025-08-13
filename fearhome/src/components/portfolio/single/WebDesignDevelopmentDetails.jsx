@@ -84,7 +84,7 @@ function WebDesignDevelopmentDetails() {
                                         <div className="aximo-project-single-thumb2" style={{ border: 'none' }}>
                                             <a href={project.link} target="_blank" rel="noopener noreferrer">
                                                 <img
-                                                    src={`http://localhost:3000${project.secondaryImage?.url}`}
+                                                    src={`https://content.fearlessint.com${project.secondaryImage?.url}`}
                                                     alt="Project Secondary"
                                                 />
                                             </a>
