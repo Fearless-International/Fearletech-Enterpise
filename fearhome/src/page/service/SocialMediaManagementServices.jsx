@@ -1,11 +1,11 @@
 import BreadCrumb from "../../components/common/Breadcrumb";
 import Testimonial from "../../components/home-one/testimonial";
-import SocialMediaManagementServices from "../../components/service/SocialMediaManagementServices";
+import SocialMediaManagementDetails from "../../components/service/SocialMediaManagementDetails";
 function SocialMediaManagementServices() {
 	return (
 		<>
 			<BreadCrumb title="Social Media Management Services" />
-			<SocialMediaManagementServices />
+			<SocialMediaManagementDetails />
 			<Testimonial />
 		</>
 	);
