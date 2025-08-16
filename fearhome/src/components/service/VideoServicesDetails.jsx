@@ -15,11 +15,9 @@ function VideoServicesDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.get('/video-services', { 
-                params: { limit: 1, page, where: { isActive: { equals: true } } }
-            });
-            setServices(response.data.docs);
-            setTotalPages(response.data.totalPages);
+            const response = await payloadClient.getVideoEditingAndAnimation(page);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {

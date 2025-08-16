@@ -15,18 +15,15 @@ function WebServicesDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.get('/web-services', { 
-                params: { limit: 1, page, where: { isActive: { equals: true } } }
-            });
-            setServices(response.data.docs);
-            setTotalPages(response.data.totalPages);
+            const response = await payloadClient.getWebServices(page);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {
             setLoading(false);
         }
     };
-
     const handlePageChange = (newPage) => {
         if (newPage >= 1 && newPage <= totalPages) {
             setCurrentPage(newPage);
