@@ -28,6 +28,7 @@ const servicesData = [
 		description:
 			"Build a brand that stands out with our creative branding services. We craft unique identities that inspire and connect with your audience.",
 		icon: "icon-branding",
+		link: "/creative-branding-services",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -35,6 +36,7 @@ const servicesData = [
 		description:
 			"Designing seamless, user-focused interfaces that enhance engagement and elevate experiences, ensuring every interaction feels intuitive and rewarding.",
 		icon: "icon-web",
+		link: "/uiux-interfaces",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -42,6 +44,7 @@ const servicesData = [
 		description:
 			"Create powerful, user-friendly mobile apps with seamless functionality. We deliver cross-platform solutions tailored to your needs, ensuring exceptional user experiences.",
 		icon: "icon-design-thinking",
+		link: "/mobile-app-development",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -49,6 +52,7 @@ const servicesData = [
 		description:
 			"Bring your stories to life with expert video editing and animation. We craft visually stunning content that captivates and engages your audience.",
 		icon: "icon-video",
+		link: "/video-services",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -56,6 +60,7 @@ const servicesData = [
 		description:
 			"Developing robust, high-performance software tailored to your needs. We deliver innovative solutions that streamline processes and drive results.",
 		icon: "icon-code",
+		link: "/software-development",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -63,6 +68,7 @@ const servicesData = [
 		description:
 			"Designing and managing efficient databases to organize, store, and retrieve data seamlessly. We ensure secure and scalable solutions for your business needs.",
 		icon: "icon-code",
+		link: "/database-creation-and-management",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -70,6 +76,7 @@ const servicesData = [
 		description:
 			"Bringing your vision to life with stunning photography, creative graphic design, and compelling content creation. We craft visuals and stories that resonate.",
 		icon: "icon-code",
+		link: "/pgc",
 	},
 ];
 

@@ -14,6 +14,16 @@ import { VideoEditingAnimationProjects } from './collections/VideoEditingAnimati
 import { CreativeBrandingProjects } from './collections/CreativeBrandingProjects'; // Import the new collection
 import { SocialMediaManagementProjects } from './collections/SocialMediaManagementProjects'; // Import the new collection
 import { ContentCreationProjects } from './collections/ContentCreationProjects'; // Import the new collection
+import { VideoEditingAndAnimation } from './collections/VideoEditingAndAnimationServices';
+import { CreativeBranding } from './collections/CreativeBrandingServices';
+import { SocialMediaManagement } from './collections/SocialMediaManagementServices';
+import { PhotographyGraphicDesigningContentCreation } from './collections/PhotographyGraphicDesigningContentCreationServices';
+import { MobileAppDevelopment } from './collections/MobileAppDevelopmentServices';
+import { SoftwareDevelopment } from './collections/SoftwareDevelopmentServices';
+import { UIUXInterfaces } from './collections/UIUXInterfacesServices';
+import { DatabaseCreationAndManagement } from './collections/DatabaseCreationAndManagementServices';
+import { WebServices } from './collections/WebServices';
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -24,8 +34,13 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Projects, LogoBrandingProjects, VideoEditingAnimationProjects, CreativeBrandingProjects, SocialMediaManagementProjects, ContentCreationProjects], // Add ContentCreationProjects to the collections array
-  cors: ['http://localhost:5173'], // Allow requests from your frontend's origin
+  collections: [Users, Media, Projects, LogoBrandingProjects, VideoEditingAnimationProjects, CreativeBrandingProjects, SocialMediaManagementProjects, ContentCreationProjects, WebServices, VideoEditingAndAnimation, MobileAppDevelopment, SoftwareDevelopment, UIUXInterfaces, DatabaseCreationAndManagement, SocialMediaManagement, CreativeBranding, PhotographyGraphicDesigningContentCreation], // Add ContentCreationProjects to the collections array
+   cors: [
+    'https://fearlessint.com',
+    'https://www.fearlessint.com',
+    'https://fearless-international-fearletech-enterpise.vercel.app',
+    'http://localhost:3000'
+  ], // Allow requests from your frontend's origin
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
