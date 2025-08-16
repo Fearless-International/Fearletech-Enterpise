@@ -25,7 +25,7 @@ export interface LoginResponse {
 
 // Create axios instance with base URL of your Strapi backend
 const api = axios.create({
-  baseURL: (import.meta as any).env.VITE_STRAPI_API_URL || 'http://localhost:1337/api',
+  baseURL: (import.meta as any).env.VITE_STRAPI_API_URL || 'https://api.fearlessint.com/api',
   headers: {
     'Content-Type': 'application/json',
   },

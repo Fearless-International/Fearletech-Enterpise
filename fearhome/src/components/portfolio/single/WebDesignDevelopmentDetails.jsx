@@ -13,18 +13,17 @@ function WebDesignDevelopmentDetails() {
     }, [currentPage]);
 
     const fetchProjects = async (page) => {
-        setLoading(true);
-        try {
-            const response = await payloadClient.get('/projects', { params: { limit: 1, page } });
-            setProjects(response.data.docs);
-            setTotalPages(response.data.totalPages);
-        } catch (error) {
-            console.error('Error fetching projects:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
+    setLoading(true);
+    try {
+        const response = await payloadClient.getProjects(page);
+        setProjects(response.docs);
+        setTotalPages(response.totalPages);
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+    } finally {
+        setLoading(false);
+    }
+};
     const handlePageChange = (newPage) => {
         if (newPage >= 1 && newPage <= totalPages) {
             setCurrentPage(newPage);
@@ -43,7 +42,7 @@ function WebDesignDevelopmentDetails() {
                         <div key={project.id} className="aximo-project-single-section">
                             <div className="aximo-project-single-thumb">
                                 <img
-                                    src={`http://localhost:3000${project.mainImage?.url}`}
+                                    src={`https://content.fearlessint.com${project.mainImage?.url}`}
                                     alt="Project Main"
                                 />
                             </div>
@@ -85,7 +84,7 @@ function WebDesignDevelopmentDetails() {
                                         <div className="aximo-project-single-thumb2" style={{ border: 'none' }}>
                                             <a href={project.link} target="_blank" rel="noopener noreferrer">
                                                 <img
-                                                    src={`http://localhost:3000${project.secondaryImage?.url}`}
+                                                    src={`https://content.fearlessint.com${project.secondaryImage?.url}`}
                                                     alt="Project Secondary"
                                                 />
                                             </a>

@@ -34,6 +34,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+
   collections: [Users, Media, Projects, LogoBrandingProjects, VideoEditingAnimationProjects, CreativeBrandingProjects, SocialMediaManagementProjects, ContentCreationProjects, WebServices, VideoEditingAndAnimation, MobileAppDevelopment, SoftwareDevelopment, UIUXInterfaces, DatabaseCreationAndManagement, SocialMediaManagement, CreativeBranding, PhotographyGraphicDesigningContentCreation], // Add ContentCreationProjects to the collections array
    cors: [
     'https://fearlessint.com',
