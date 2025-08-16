@@ -44,7 +44,14 @@ import ContentCreation from "../page/portfolio/ContentCreation.jsx";
 import WebServices from "../page/service/WebServices.jsx";
 import VerificationSent from '../components/auth/VerificationSent';
 import VerifyEmail from '../components/auth/VerifyEmail';
-
+import VideoServices from "../page/service/VideoServices.jsx";
+import CreativeBrandingServices from "../page/service/CreativeBrandingServices.jsx";
+import UIUXServices from "../page/service/UIUXServices.jsx";
+import MobileAppDevelopmentServices from "../page/service/MobileAppDevelopmentServices.jsx";
+import SoftwareDevelopmentServices from "../page/service/SoftwareDevelopmentServices.jsx";
+import DatabaseCreationandManagementServices from "../page/service/DatabaseCreationandManagementServices.jsx";
+import PhotographyGraphicDesigningContentCreationServices from "../page/service/PhotographyGraphicDesigningContentCreationServices.jsx";
+import SocialMediaManagementServices from "../page/service/SocialMediaManagementServices.jsx";
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -103,6 +110,38 @@ export const router = createBrowserRouter([
 					{
 						path: "/web-services",
 						element: <WebServices />,
+					},
+					{
+						path: "/video-services",
+						element: <VideoServices />,
+					},
+					{
+						path: "/creative-branding-services",
+						element: <CreativeBrandingServices />,
+					},
+					{
+						path: "/uiux-interfaces",
+						element: <UIUXServices />,
+					},
+					{
+						path: "/mobile-app-development",
+						element: <MobileAppDevelopmentServices />,
+					},
+					{
+						path: "/software-development",
+						element: <SoftwareDevelopmentServices />,
+					},
+					{
+						path: "/database-creation-and-management",
+						element: <DatabaseCreationandManagementServices />,
+					},
+					{
+						path: "/pgc",
+						element: <PhotographyGraphicDesigningContentCreationServices />,
+					},
+					{
+						path: "/social-media-management",
+						element: <SocialMediaManagementServices />,
 					},
 					{
 						path: "/team",
