@@ -15,7 +15,7 @@ function CreativeBrandingServicesDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.getCreativeBrandingServices(page);
+            const response = await payloadClient.getCreativeBranding(page);
             setServices(response.docs);
             setTotalPages(response.totalPages);
         } catch (error) {
