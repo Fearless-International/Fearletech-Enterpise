@@ -15,7 +15,7 @@ export default [
       },
       cors: {
         enabled: true,
-        origin: ['http://localhost:4200', 'http://localhost:5173'], // Allow your front-end's URLs
+        origin: ['http://localhost:4200', 'http://localhost:5173', 'https://fearlessint.com', 'https://www.fearlessint.com'],
         headers: ['*'],
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
       },
@@ -24,10 +24,8 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      
       headers: '*',
-      origin: ['http://localhost:4200', 'http://localhost:5173'],
-      // origin: ['http://localhost:4200', 'http://localhost:5173'], // Allow your front-end's URLs
+      origin: ['http://localhost:4200', 'http://localhost:5173', 'https://fearlessint.com', 'https://www.fearlessint.com'],
     }
   },
   'strapi::poweredBy',

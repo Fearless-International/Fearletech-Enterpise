@@ -27,7 +27,7 @@ const getAuthToken = () => {
 
 // Create axios instance
 const api = axios.create({
-  baseURL: (import.meta as any).env.VITE_STRAPI_API_URL || 'http://localhost:1337/api',
+  baseURL: (import.meta as any).env.VITE_STRAPI_API_URL || 'https://api.fearlessint.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -63,6 +63,7 @@ export const submitContactForm = async (formData: ContactFormData) => {
       }
     });
     console.log('Response:', response);
+    console.log(formData);
     return response.data;
   } catch (error) {
     console.error('Error submitting contact form:', error);

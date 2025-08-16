@@ -1,73 +1,91 @@
-import * as axios from 'axios';
-
-// Your Payload CMS URL on Render
+// Simple fetch-based client instead of axios
 const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://content.fearlessint.com';
 
-// Create axios instance with base configuration
-const payloadAPI = axios.create({
-  baseURL: `${PAYLOAD_API_URL}/api`,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-// Add auth token if needed
-const setAuthToken = (token) => {
-  if (token) {
-    payloadAPI.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  } else {
-    delete payloadAPI.defaults.headers.common['Authorization'];
-  }
-};
-
-// API methods for your CMS collections
 export const payloadClient = {
-  // Get all posts/articles
-  getPosts: async (limit = 10, page = 1) => {
+  getProjects: async () => {
     try {
-      const response = await payloadAPI.get(`/posts?limit=${limit}&page=${page}`);
-      return response.data;
+      const response = await fetch(`${PAYLOAD_API_URL}/api/projects`);
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error('Error fetching projects:', error);
       throw error;
     }
   },
 
-  // Get single post by slug
-  getPostBySlug: async (slug) => {
+  getProjectBySlug: async (slug) => {
     try {
-      const response = await payloadAPI.get(`/posts?where[slug][equals]=${slug}`);
-      return response.data.docs[0];
+      const response = await fetch(`${PAYLOAD_API_URL}/api/projects?where[slug][equals]=${slug}`);
+      const data = await response.json();
+      return data.docs[0];
     } catch (error) {
-      console.error('Error fetching post:', error);
+      console.error('Error fetching project:', error);
       throw error;
     }
   },
 
-  // Get portfolio items
-  getPortfolioItems: async () => {
+  getContentCreationProjects: async () => {
     try {
-      const response = await payloadAPI.get('/portfolio');
-      return response.data;
+      const response = await fetch(`${PAYLOAD_API_URL}/api/content-creation-projects?limit=10`);
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error('Error fetching portfolio:', error);
+      console.error('Error fetching content creation projects:', error);
       throw error;
     }
   },
 
-  // Get pages
-  getPages: async () => {
+  getCreativeBrandingProjects: async (page = 1) => {
     try {
-      const response = await payloadAPI.get('/pages');
-      return response.data;
+      const response = await fetch(`${PAYLOAD_API_URL}/api/creative-branding-projects?limit=1&page=${page}`);
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error('Error fetching pages:', error);
+      console.error('Error fetching creative branding projects:', error);
       throw error;
     }
   },
 
-  // Add more methods as needed for your collections
+  getProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+        throw error;
+    }
+},
+
+getVideoEditingAnimationProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/video-editing-animation-projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching video editing animation projects:', error);
+        throw error;
+    }
+},
+
+getSocialMediaManagementProjects: async () => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/social-media-management-projects?limit=10`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching social media management projects:', error);
+        throw error;
+    }
+},
+getLogoBrandingProjects: async (page = 1) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/logo-branding-projects?limit=1&page=${page}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching logo branding projects:', error);
+        throw error;
+    }
+}
 };
-
-export { setAuthToken };
-export default payloadClient;
