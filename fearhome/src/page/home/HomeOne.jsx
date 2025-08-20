@@ -80,32 +80,32 @@ const servicesData = [
 	},
 ];
 
-const teamsData = [
-	{
-		id: crypto.randomUUID(),
-		name: "Andrew Mark",
-		designation: "Creative Director",
-		img: Team1Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		name: "Jack Taylor",
-		designation: "Senior Designer",
-		img: Team2Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		name: "Martine Joy",
-		designation: "Project Manager",
-		img: Team3Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		name: "Adam Straw",
-		designation: "Web Developer",
-		img: Team4Img,
-	},
-];
+// const teamsData = [
+// 	{
+// 		id: crypto.randomUUID(),
+// 		name: "Andrew Mark",
+// 		designation: "Creative Director",
+// 		img: Team1Img,
+// 	},
+// 	{
+// 		id: crypto.randomUUID(),
+// 		name: "Jack Taylor",
+// 		designation: "Senior Designer",
+// 		img: Team2Img,
+// 	},
+// 	{
+// 		id: crypto.randomUUID(),
+// 		name: "Martine Joy",
+// 		designation: "Project Manager",
+// 		img: Team3Img,
+// 	},
+// 	{
+// 		id: crypto.randomUUID(),
+// 		name: "Adam Straw",
+// 		designation: "Web Developer",
+// 		img: Team4Img,
+// 	},
+// ];
 
 function HomeOne() {
 	return (
