@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import payloadClient from "@backend/payloadClient.ts";
+import { payloadClient } from '../../lib/payloadClient'; 
 
 
 function SocialMediaManagementDetails() {
@@ -15,11 +15,9 @@ function SocialMediaManagementDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.get('/social-media-management', { 
-                params: { limit: 1, page, where: { isActive: { equals: true } } }
-            });
-            setServices(response.data.docs);
-            setTotalPages(response.data.totalPages);
+            const response = await payloadClient.getSocialMediaManagement(page);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {
