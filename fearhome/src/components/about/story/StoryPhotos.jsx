@@ -1,4 +1,4 @@
-import Story1Img from "../../../assets/images/about/story1.png";
+import Story1Img from "../../../assets/images/about/image5.png";
 import Story2Img from "../../../assets/images/about/story2.png";
 import Story3Img from "../../../assets/images/about/story3.png";
 import Story4Img from "../../../assets/images/about/story4.png";
