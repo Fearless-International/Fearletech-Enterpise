@@ -9,27 +9,27 @@ export const routes = [
 		subRoutes: [
 			{
 				title: "WDD",
-				href: "service/web-services",
+				href: "web-services",
 			},
 			{
 				title: "Creative Branding",
-				href: "/creative-branding",
+				href: "creative-branding",
 			},
 			{
 				title: "UI/UX Interfaces",
-				href: "/uiux-interfaces",
+				href: "uiux-interfaces",
 			},
 			{
 				title: "MAD",
-				href: "/mobile-app-development",
+				href: "mobile-app-development",
 			},
 			{
 				title: "VEA",
-				href: "/video-editing-and-animation",
+				href: "video-editing-and-animation",
 			},
 			{
 				title: "Software Development",
-				href: "/software-development",
+				href: "software-development",
 			},
 			{
 				title: "Many more...",
