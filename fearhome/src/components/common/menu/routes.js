@@ -51,7 +51,7 @@ export const routes = [
 			},
 			{
 				title: "Portfolio",
-				href: "portfolio-two",
+				href: "/",
 			},
 			{
 				title: "Testimonials",
