@@ -22,7 +22,7 @@ function FooterContent() {
 					<ul>
 						<li>Give us a call:</li>
 						<li>
-							<a href="tel:(123) 456-7890">(123) 456-7890</a>
+							<a href="tel:(123) 456-7890">+ 233 55 086 6710</a>
 						</li>
 					</ul>
 				</div>
@@ -30,7 +30,7 @@ function FooterContent() {
 					<ul>
 						<li>Send us an email:</li>
 						<li>
-							<a href="mailto:info@mthemeus.com">info@mthemeus.com</a>
+							<a href="mailto:info@mthemeus.com">info@fearlessint.com</a>
 						</li>
 					</ul>
 				</div>
@@ -38,22 +38,22 @@ function FooterContent() {
 			<div className="aximo-social-icon social-large">
 				<ul>
 					<li>
-						<a href="https://twitter.com/" target="_blank">
+						<a href="#" target="_blank">
 							<i className="icon-twitter"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://facebook.com/" target="_blank">
+						<a href="#" target="_blank">
 							<i className="icon-facebook"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/" target="_blank">
+						<a href="#" target="_blank">
 							<i className="icon-instagram"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.linkedin.com/" target="_blank">
+						<a href="#" target="_blank">
 							<i className="icon-linkedin"></i>
 						</a>
 					</li>
