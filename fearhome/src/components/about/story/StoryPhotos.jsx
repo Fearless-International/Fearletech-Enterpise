@@ -1,5 +1,5 @@
 import Story1Img from "../../../assets/images/about/pexels-eva-bronzini-7661184.jpg";
-import Story2Img from "../../../assets/images/about/ZOUZA_D82.png";
+import Story2Img from "../../../assets/images/about/pexels-christopher-welsch-leveroni-2150186467-33532465.jpg";
 import Story3Img from "../../../assets/images/about/pexels-harold-vasquez-853421-2653362.jpg";
 import Story4Img from "../../../assets/images/about/pexels-makrufinmuhammad-33538425.jpg";
 function StoryPhotos() {
