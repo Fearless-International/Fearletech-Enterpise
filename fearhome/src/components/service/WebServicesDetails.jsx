@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { payloadClient } from '../../lib/payloadClient';
+import { payloadClient } from '../../lib/payloadClient'; 
 
-function VideoServicesDetails() {
+
+function WebServicesDetails() {
     const [services, setServices] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -14,16 +15,15 @@ function VideoServicesDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.getVideoEditingAndAnimation(page);
+            const response = await payloadClient.getWebServices(page);
             setServices(response.docs);
             setTotalPages(response.totalPages);
         } catch (error) {
-            console.error('Error fetching video services:', error);
+            console.error('Error fetching services:', error);
         } finally {
             setLoading(false);
         }
     };
-
     const handlePageChange = (newPage) => {
         if (newPage >= 1 && newPage <= totalPages) {
             setCurrentPage(newPage);
@@ -40,12 +40,9 @@ function VideoServicesDetails() {
                 ) : (
                     services.map((service) => (
                         <div key={service.id} className="aximo-service-details-wrap">
-                            {/* Hero Image */}
                             <div className="aximo-service-details-thumb">
                                 <img src={service.heroImageUrl} alt={service.title} />
                             </div>
-
-                            {/* Title + Content */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
@@ -64,8 +61,7 @@ function VideoServicesDetails() {
                                         )}
                                     </div>
                                 </div>
-
-                                {/* Side Image */}
+                                {/* Side Image positioned here */}
                                 {service.sideImageUrl && (
                                     <div className="col-lg-4">
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
@@ -77,8 +73,7 @@ function VideoServicesDetails() {
                                     </div>
                                 )}
                             </div>
-
-                            {/* Features Section */}
+                            
                             {service.serviceFeatures && service.serviceFeatures.length > 0 && (
                                 <div className="row">
                                     {service.serviceFeatures.map((feature, featureIndex) => (
@@ -97,8 +92,8 @@ function VideoServicesDetails() {
                                     ))}
                                 </div>
                             )}
-
-                            {/* Working Approach Section */}
+                            
+                            {/* Working Approach Section - moved up */}
                             {service.workingApproach && service.workingApproach.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
@@ -115,8 +110,7 @@ function VideoServicesDetails() {
                         </div>
                     ))
                 )}
-
-                {/* Pagination Controls */}
+                
                 <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
@@ -141,4 +135,4 @@ function VideoServicesDetails() {
     );
 }
 
-export default VideoServicesDetails;
+export default WebServicesDetails;
