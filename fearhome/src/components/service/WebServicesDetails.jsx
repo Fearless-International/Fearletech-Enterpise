@@ -79,7 +79,7 @@ function WebServicesDetails() {
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}/ {feature.featureTitle}:</h3>
+                                                <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
                                                         <li key={pointIndex}>
@@ -111,7 +111,7 @@ function WebServicesDetails() {
                     ))
                 )}
                 
-                <div className="pagination-controls">
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}
