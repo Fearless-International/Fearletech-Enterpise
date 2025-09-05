@@ -49,7 +49,7 @@ function SoftwareDevelopmentDetails() {
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
-                                        <h2>
+                                        <h2 style={{ fontSize: '28px' }}>
                                             <span className="aximo-title-animation">
                                                 {service.title}
                                             </span>
