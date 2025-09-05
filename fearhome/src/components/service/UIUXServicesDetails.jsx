@@ -55,8 +55,7 @@ function UIUXInterfacesDetails() {
                                         <h2>
                                             <span className="aximo-title-animation">
                                                 {service.title}
-                                            </span>{" "}
-                                            {service.subtitle}
+                                            </span>
                                         </h2>
                                         <p>{service.description}</p>
                                         {service.additionalDescription && <p>{service.additionalDescription}</p>}
@@ -79,7 +78,7 @@ function UIUXInterfacesDetails() {
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}/ {feature.featureTitle}</h3>
+                                                <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
                                                         <li key={pointIndex}>{point.point}</li>
