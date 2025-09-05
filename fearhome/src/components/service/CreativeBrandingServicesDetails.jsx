@@ -71,7 +71,7 @@ function CreativeBrandingServicesDetails() {
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
                                             <img
                                                 src={service.sideImageUrl}
-                                                alt="Service Side Image"
+                                                alt="Service Side"
                                             />
                                         </div>
                                     </div>
@@ -79,7 +79,7 @@ function CreativeBrandingServicesDetails() {
                             </div>
 
                             {/* Features Section */}
-                            {service.serviceFeatures && service.serviceFeatures.length > 0 && (
+                            {service.serviceFeatures?.length > 0 && (
                                 <div className="row">
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
@@ -87,9 +87,7 @@ function CreativeBrandingServicesDetails() {
                                                 <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
-                                                        <li key={pointIndex}>
-                                                            {point.point}
-                                                        </li>
+                                                        <li key={pointIndex}>{point.point}</li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -98,15 +96,16 @@ function CreativeBrandingServicesDetails() {
                                 </div>
                             )}
 
-                            {/* Working Approach Section */}
-                            {service.workingApproach && service.workingApproach.length > 0 && (
+                            {/* Working Approach Section (as paragraphs) */}
+                            {service.workingApproach?.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
                                     <div className="aximo-approach-steps">
                                         {service.workingApproach.map((step, stepIndex) => (
                                             <div key={stepIndex} className="aximo-approach-item" style={{ marginBottom: '20px' }}>
-                                                <h4>{stepIndex + 1}. {step.stepTitle}</h4>
-                                                <p>{step.stepDescription}</p>
+                                                <p>
+                                                    <strong>{step.stepTitle}:</strong> {step.stepDescription}
+                                                </p>
                                             </div>
                                         ))}
                                     </div>
