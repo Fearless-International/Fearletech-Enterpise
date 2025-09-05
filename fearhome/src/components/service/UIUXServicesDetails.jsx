@@ -48,17 +48,27 @@ function UIUXInterfacesDetails() {
                                 </div>
                             )}
 
-                            {/* Main Service Content */}
+                            {/* Main Content */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
-                                        <h2>
-                                            <span className="aximo-title-animation">
+                                        <h2 style={{ fontSize: '28px', lineHeight: '1.3', marginBottom: '16px' }}>
+                                            <span className="aximo-title-animation" style={{ fontWeight: '700', fontSize: '32px' }}>
                                                 {service.title}
                                             </span>
+                                            {service.subtitle && (
+                                                <>
+                                                    <br />
+                                                    <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
+                                                        {service.subtitle}
+                                                    </span>
+                                                </>
+                                            )}
                                         </h2>
                                         <p>{service.description}</p>
-                                        {service.additionalDescription && <p>{service.additionalDescription}</p>}
+                                        {service.additionalDescription && (
+                                            <p>{service.additionalDescription}</p>
+                                        )}
                                     </div>
                                 </div>
 
@@ -108,7 +118,7 @@ function UIUXInterfacesDetails() {
                     ))
                 )}
 
-                {/* Pagination */}
+                {/* Pagination Controls */}
                 <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
