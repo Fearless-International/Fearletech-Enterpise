@@ -14,11 +14,13 @@ function DatabaseCreationAndManagementDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.getDatabaseCreationAndManagement(page);
-            setServices(response.docs);
-            setTotalPages(response.totalPages);
+            const response = await payloadClient.get('/database-creation-and-management', {
+                params: { limit: 1, page, where: { isActive: { equals: true } } }
+            });
+            setServices(response.data.docs);
+            setTotalPages(response.data.totalPages);
         } catch (error) {
-            console.error('Error fetching database creation & management services:', error);
+            console.error('Error fetching services:', error);
         } finally {
             setLoading(false);
         }
@@ -54,9 +56,11 @@ function DatabaseCreationAndManagementDetails() {
                                                 {service.title}
                                             </span>
                                             <br />
-                                            <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
-                                                {service.subtitle}
-                                            </span>
+                                            {service.subtitle && (
+                                                <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
+                                                    {service.subtitle}
+                                                </span>
+                                            )}
                                         </h2>
                                         <p>{service.description}</p>
                                         {service.additionalDescription && (
@@ -71,7 +75,7 @@ function DatabaseCreationAndManagementDetails() {
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
                                             <img
                                                 src={service.sideImageUrl}
-                                                alt="Service Side Image"
+                                                alt="Service Side"
                                             />
                                         </div>
                                     </div>
@@ -80,11 +84,11 @@ function DatabaseCreationAndManagementDetails() {
 
                             {/* Features Section */}
                             {service.serviceFeatures && service.serviceFeatures.length > 0 && (
-                                <div className="row">
+                                <div className="row" style={{ marginTop: '30px' }}>
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{feature.featureTitle}</h3>
+                                                <h3>{featureIndex + 1}. {feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
                                                         <li key={pointIndex}>
