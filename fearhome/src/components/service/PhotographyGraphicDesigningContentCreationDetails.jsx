@@ -15,8 +15,8 @@ function PhotographyGraphicDesigningContentCreationDetails() {
         setLoading(true);
         try {
             const response = await payloadClient.getPhotographyGraphicDesigningContentCreation(page);
-            setServices(response.docs || []);
-            setTotalPages(response.totalPages || 1);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {
@@ -37,27 +37,33 @@ function PhotographyGraphicDesigningContentCreationDetails() {
                     <div className="loader">
                         <div className="spinner"></div>
                     </div>
-                ) : services.length > 0 ? (
+                ) : (
                     services.map((service) => (
                         <div key={service.id} className="aximo-service-details-wrap">
                             {/* Hero Image */}
-                            {service.heroImageUrl && (
-                                <div className="aximo-service-details-thumb">
-                                    <img src={service.heroImageUrl} alt={service.title} />
-                                </div>
-                            )}
+                            <div className="aximo-service-details-thumb">
+                                <img src={service.heroImageUrl} alt={service.title} />
+                            </div>
 
+                            {/* Title + Description */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
-                                        <h2>
-                                            <span className="aximo-title-animation">
+                                        <h2 style={{ fontSize: '28px', lineHeight: '1.3', marginBottom: '16px' }}>
+                                            <span className="aximo-title-animation" style={{ fontWeight: '700', fontSize: '32px' }}>
                                                 {service.title}
                                             </span>
-                                            {service.subtitle}
+                                            <br />
+                                            {service.subtitle && (
+                                                <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
+                                                    {service.subtitle}
+                                                </span>
+                                            )}
                                         </h2>
                                         <p>{service.description}</p>
-                                        {service.additionalDescription && <p>{service.additionalDescription}</p>}
+                                        {service.additionalDescription && (
+                                            <p>{service.additionalDescription}</p>
+                                        )}
                                     </div>
                                 </div>
 
@@ -65,22 +71,27 @@ function PhotographyGraphicDesigningContentCreationDetails() {
                                 {service.sideImageUrl && (
                                     <div className="col-lg-4">
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
-                                            <img src={service.sideImageUrl} alt="Service Side Image" />
+                                            <img
+                                                src={service.sideImageUrl}
+                                                alt="Service Side"
+                                            />
                                         </div>
                                     </div>
                                 )}
                             </div>
 
                             {/* Features Section */}
-                            {service.serviceFeatures?.length > 0 && (
-                                <div className="row">
+                            {service.serviceFeatures && service.serviceFeatures.length > 0 && (
+                                <div className="row" style={{ marginTop: '30px' }}>
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}/ {feature.featureTitle}:</h3>
+                                                <h3>{featureIndex + 1}. {feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
-                                                        <li key={pointIndex}>{point.point}</li>
+                                                        <li key={pointIndex}>
+                                                            {point.point}
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -90,7 +101,7 @@ function PhotographyGraphicDesigningContentCreationDetails() {
                             )}
 
                             {/* Working Approach Section */}
-                            {service.workingApproach?.length > 0 && (
+                            {service.workingApproach && service.workingApproach.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
                                     <div className="aximo-approach-steps">
@@ -105,12 +116,10 @@ function PhotographyGraphicDesigningContentCreationDetails() {
                             )}
                         </div>
                     ))
-                ) : (
-                    <p>No services found for this category.</p>
                 )}
 
-                {/* Pagination */}
-                <div className="pagination-controls">
+                {/* Pagination Controls */}
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}

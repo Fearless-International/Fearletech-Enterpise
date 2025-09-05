@@ -47,6 +47,7 @@ function SocialMediaManagementDetails() {
                                 </div>
                             )}
 
+                            {/* Title & Main Content */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
@@ -75,7 +76,7 @@ function SocialMediaManagementDetails() {
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}/ {feature.featureTitle}:</h3>
+                                                <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
                                                         <li key={pointIndex}>{point.point}</li>
@@ -87,15 +88,16 @@ function SocialMediaManagementDetails() {
                                 </div>
                             )}
 
-                            {/* Working Approach */}
+                            {/* Working Approach (Converted to Paragraphs) */}
                             {service.workingApproach?.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
                                     <div className="aximo-approach-steps">
                                         {service.workingApproach.map((step, stepIndex) => (
                                             <div key={stepIndex} className="aximo-approach-item" style={{ marginBottom: '20px' }}>
-                                                <h4>{stepIndex + 1}. {step.stepTitle}</h4>
-                                                <p>{step.stepDescription}</p>
+                                                <p>
+                                                    <strong>{step.stepTitle}:</strong> {step.stepDescription}
+                                                </p>
                                             </div>
                                         ))}
                                     </div>
@@ -108,7 +110,7 @@ function SocialMediaManagementDetails() {
                 )}
 
                 {/* Pagination */}
-                <div className="pagination-controls">
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '40px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}
