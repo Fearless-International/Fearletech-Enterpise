@@ -48,7 +48,7 @@ function UIUXInterfacesDetails() {
                                 </div>
                             )}
 
-                            {/* Service Main Content */}
+                            {/* Main Service Content */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
@@ -109,8 +109,8 @@ function UIUXInterfacesDetails() {
                     ))
                 )}
 
-                {/* Pagination Controls */}
-                <div className="pagination-controls">
+                {/* Pagination */}
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}
