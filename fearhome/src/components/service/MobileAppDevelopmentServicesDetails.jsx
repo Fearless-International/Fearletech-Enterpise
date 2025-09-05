@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { payloadClient } from '../../lib/payloadClient'; 
 
-
 function MobileAppDevelopmentDetails() {
     const [services, setServices] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +58,6 @@ function MobileAppDevelopmentDetails() {
                                         )}
                                     </div>
                                 </div>
-                                {/* Side Image positioned here */}
                                 {service.sideImageUrl && (
                                     <div className="col-lg-4">
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
@@ -71,7 +69,7 @@ function MobileAppDevelopmentDetails() {
                                     </div>
                                 )}
                             </div>
-                            
+
                             {service.serviceFeatures && service.serviceFeatures.length > 0 && (
                                 <div className="row">
                                     {service.serviceFeatures.map((feature, featureIndex) => (
@@ -90,8 +88,7 @@ function MobileAppDevelopmentDetails() {
                                     ))}
                                 </div>
                             )}
-                            
-                            {/* Working Approach Section - moved up */}
+
                             {service.workingApproach && service.workingApproach.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
@@ -108,7 +105,7 @@ function MobileAppDevelopmentDetails() {
                         </div>
                     ))
                 )}
-                
+
                 <div className="pagination-controls">
                     <button
                         className="pagination-button"
