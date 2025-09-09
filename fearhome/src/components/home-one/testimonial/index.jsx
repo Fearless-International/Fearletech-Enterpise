@@ -43,11 +43,10 @@ const testimonialsData = [
 		description:
 			"Fenoutech’s collaboration with Fearless completely transformed how we present ourselves. Our marketing materials now look modern and polished. The boost in customer engagement and recognition has been impressive since we rolled out the new visuals.",
 		author: "H. Houngnandan",
-		designation: "Cyber Security Expert, Fenoutech",
+		designation: "CS Expert, Fenoutech",
 		img: Thumb4Img,
 	},
 ];
-
 
 function Testimonial() {
 	return (
