@@ -5,12 +5,12 @@ import GoogleMap from "../components/contact/GoogleMap";
 import TwoColumnFaq from "../components/contact/TwoColumnFaq";
 function ContactUs() {
 	const location = {
-		center: {
-			lat: 10.99835602,
-			lng: 77.01502627,
-		},
-		zoom: 11,
-	};
+	center: {
+		lat: 5.6037168,
+		lng: -0.1869644,
+	},
+	zoom: 12,
+};
 	return (
 		<>
 			<BreadCrumb title="Contact Us" />
