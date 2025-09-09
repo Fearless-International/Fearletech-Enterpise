@@ -9,9 +9,9 @@ const testimonialsData = [
 	{
 		id: crypto.randomUUID(),
 		rating: 5,
-		title: "Super customer service!",
+		title: "Website Delivered Perfectly!",
 		description:
-			"Fearless exceeded our expectations! We made a last-minute request for Aurora Ghana, and everything was delivered perfectly on time. The design was professional, the quality was excellent, and the team went the extra mile to make sure everything looked amazing.",
+			"Fearless built our new seafood website, and the result was flawless. Fast, professional, and exactly what Aurora Ghana needed.",
 		author: "M. Dekruijff",
 		designation: "Aurora Ghana",
 		img: Thumb1Img,
@@ -19,9 +19,9 @@ const testimonialsData = [
 	{
 		id: crypto.randomUUID(),
 		rating: 4,
-		title: "Exceptional creativity and vision",
+		title: "Our Brand Looks Amazing",
 		description:
-			"Partnering with Fearless was a game-changer for Kolmesh. Their creativity and vision completely redefined our visual identity. The new logo and brand elements now capture the heart of our company, and our audience has responded positively ever since!",
+			"Fearless built Kolmesh’s website from scratch, and it completely changed how our company is seen. Clean, modern, and professional.",
 		author: "Gary",
 		designation: "Manager, Kolmesh Ltd",
 		img: Thumb2Img,
@@ -29,24 +29,25 @@ const testimonialsData = [
 	{
 		id: crypto.randomUUID(),
 		rating: 5,
-		title: "Innovative and professional",
+		title: "Community Management Experts",
 		description:
-			"Fearless brought fresh ideas and energy to our campaign at Giant Foods. Their innovative approach, attention to detail, and professionalism made the entire process smooth. The final results were beyond what we imagined, and our customers loved it.",
+			"Fearless manages Giant’s online community with creativity and consistency. Our fan engagement has never been stronger.",
 		author: "M. KOTAN",
-		designation: "Giant Industry, Head",
+		designation: "Head, Giant Music Label",
 		img: Thumb3Img,
 	},
 	{
 		id: crypto.randomUUID(),
-		rating: 4,
-		title: "Transformed our brand",
+		rating: 5,
+		title: "Complete Digital Makeover",
 		description:
-			"Fenoutech’s collaboration with Fearless completely transformed how we present ourselves. Our marketing materials now look modern and polished. The boost in customer engagement and recognition has been impressive since we rolled out the new visuals.",
+			"Fearless built Fenoutech’s website and runs our social media. The results speak for themselves — we now look like an industry leader.",
 		author: "H. Houngnandan",
-		designation: "CS Expert, Fenoutech",
+		designation: "Cyber Security Expert, Fenoutech",
 		img: Thumb4Img,
 	},
 ];
+
 
 function Testimonial() {
 	return (
