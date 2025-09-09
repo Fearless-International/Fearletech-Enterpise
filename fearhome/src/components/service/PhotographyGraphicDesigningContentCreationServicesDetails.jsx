@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { payloadClient } from '../../lib/payloadClient';
 
-function DatabaseCreationAndManagementDetails() {
+function PhotographyGraphicDesigningContentCreationDetails() {
     const [services, setServices] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -14,7 +14,7 @@ function DatabaseCreationAndManagementDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.getDatabaseCreationAndManagement(page);
+            const response = await payloadClient.getPhotographyGraphicDesigningContentCreation(page);
             setServices(response.docs);
             setTotalPages(response.totalPages);
         } catch (error) {
@@ -45,7 +45,7 @@ function DatabaseCreationAndManagementDetails() {
                                 <img src={service.heroImageUrl} alt={service.title} />
                             </div>
 
-                            {/* Title + Content */}
+                            {/* Title + Description */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
@@ -86,10 +86,12 @@ function DatabaseCreationAndManagementDetails() {
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{feature.featureTitle}</h3>
+                                                <h3>{featureIndex + 1}. {feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
-                                                        <li key={pointIndex}>{point.point}</li>
+                                                        <li key={pointIndex}>
+                                                            {point.point}
+                                                        </li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -105,9 +107,8 @@ function DatabaseCreationAndManagementDetails() {
                                     <div className="aximo-approach-steps">
                                         {service.workingApproach.map((step, stepIndex) => (
                                             <div key={stepIndex} className="aximo-approach-item" style={{ marginBottom: '20px' }}>
-                                                <p>
-                                                    <strong>{step.stepTitle}:</strong> {step.stepDescription}
-                                                </p>
+                                                <h4>{stepIndex + 1}. {step.stepTitle}</h4>
+                                                <p>{step.stepDescription}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -142,4 +143,4 @@ function DatabaseCreationAndManagementDetails() {
     );
 }
 
-export default DatabaseCreationAndManagementDetails;
+export default PhotographyGraphicDesigningContentCreationDetails;
