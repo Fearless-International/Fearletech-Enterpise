@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { payloadClient } from '../../lib/payloadClient'; 
+import { payloadClient } from '../../lib/payloadClient';
 
-
-function DatabaseCreationAndManagementDetails() {
+function PhotographyGraphicDesigningContentCreationDetails() {
     const [services, setServices] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -15,11 +14,9 @@ function DatabaseCreationAndManagementDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.get('/database-creation-and-management', { 
-                params: { limit: 1, page, where: { isActive: { equals: true } } }
-            });
-            setServices(response.data.docs);
-            setTotalPages(response.data.totalPages);
+            const response = await payloadClient.getPhotographyGraphicDesigningContentCreation(page);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {
@@ -43,17 +40,25 @@ function DatabaseCreationAndManagementDetails() {
                 ) : (
                     services.map((service) => (
                         <div key={service.id} className="aximo-service-details-wrap">
+                            {/* Hero Image */}
                             <div className="aximo-service-details-thumb">
                                 <img src={service.heroImageUrl} alt={service.title} />
                             </div>
+
+                            {/* Title + Description */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
-                                        <h2>
-                                            <span className="aximo-title-animation">
+                                        <h2 style={{ fontSize: '28px', lineHeight: '1.3', marginBottom: '16px' }}>
+                                            <span className="aximo-title-animation" style={{ fontWeight: '700', fontSize: '32px' }}>
                                                 {service.title}
                                             </span>
-                                            {service.subtitle}
+                                            <br />
+                                            {service.subtitle && (
+                                                <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
+                                                    {service.subtitle}
+                                                </span>
+                                            )}
                                         </h2>
                                         <p>{service.description}</p>
                                         {service.additionalDescription && (
@@ -61,25 +66,27 @@ function DatabaseCreationAndManagementDetails() {
                                         )}
                                     </div>
                                 </div>
-                                {/* Side Image positioned here */}
+
+                                {/* Side Image */}
                                 {service.sideImageUrl && (
                                     <div className="col-lg-4">
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
                                             <img
                                                 src={service.sideImageUrl}
-                                                alt="Service Side Image"
+                                                alt="Service Side"
                                             />
                                         </div>
                                     </div>
                                 )}
                             </div>
-                            
+
+                            {/* Features Section */}
                             {service.serviceFeatures && service.serviceFeatures.length > 0 && (
-                                <div className="row">
+                                <div className="row" style={{ marginTop: '30px' }}>
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}/ {feature.featureTitle}:</h3>
+                                                <h3>{featureIndex + 1}. {feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
                                                         <li key={pointIndex}>
@@ -92,8 +99,8 @@ function DatabaseCreationAndManagementDetails() {
                                     ))}
                                 </div>
                             )}
-                            
-                            {/* Working Approach Section - moved up */}
+
+                            {/* Working Approach Section */}
                             {service.workingApproach && service.workingApproach.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
@@ -110,8 +117,9 @@ function DatabaseCreationAndManagementDetails() {
                         </div>
                     ))
                 )}
-                
-                <div className="pagination-controls">
+
+                {/* Pagination Controls */}
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}
@@ -135,4 +143,4 @@ function DatabaseCreationAndManagementDetails() {
     );
 }
 
-export default DatabaseCreationAndManagementDetails;
+export default PhotographyGraphicDesigningContentCreationDetails;
