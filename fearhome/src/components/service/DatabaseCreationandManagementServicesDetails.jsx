@@ -14,11 +14,9 @@ function DatabaseCreationAndManagementDetails() {
     const fetchServices = async (page) => {
         setLoading(true);
         try {
-            const response = await payloadClient.get('/database-creation-and-management', {
-                params: { limit: 1, page, where: { isActive: { equals: true } } }
-            });
-            setServices(response.data.docs);
-            setTotalPages(response.data.totalPages);
+            const response = await payloadClient.getDatabaseCreationAndManagement(page);
+            setServices(response.docs);
+            setTotalPages(response.totalPages);
         } catch (error) {
             console.error('Error fetching services:', error);
         } finally {
@@ -88,12 +86,10 @@ function DatabaseCreationAndManagementDetails() {
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
                                             <div className="aximo-user-interface">
-                                                <h3>{featureIndex + 1}. {feature.featureTitle}</h3>
+                                                <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
-                                                        <li key={pointIndex}>
-                                                            {point.point}
-                                                        </li>
+                                                        <li key={pointIndex}>{point.point}</li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -109,8 +105,9 @@ function DatabaseCreationAndManagementDetails() {
                                     <div className="aximo-approach-steps">
                                         {service.workingApproach.map((step, stepIndex) => (
                                             <div key={stepIndex} className="aximo-approach-item" style={{ marginBottom: '20px' }}>
-                                                <h4>{stepIndex + 1}. {step.stepTitle}</h4>
-                                                <p>{step.stepDescription}</p>
+                                                <p>
+                                                    <strong>{step.stepTitle}:</strong> {step.stepDescription}
+                                                </p>
                                             </div>
                                         ))}
                                     </div>

@@ -18,7 +18,7 @@ function SoftwareDevelopmentDetails() {
             setServices(response.docs);
             setTotalPages(response.totalPages);
         } catch (error) {
-            console.error('Error fetching services:', error);
+            console.error('Error fetching software development services:', error);
         } finally {
             setLoading(false);
         }
@@ -40,20 +40,30 @@ function SoftwareDevelopmentDetails() {
                 ) : (
                     services.map((service) => (
                         <div key={service.id} className="aximo-service-details-wrap">
+                            
                             {/* Hero Image */}
-                            <div className="aximo-service-details-thumb">
-                                <img src={service.heroImageUrl} alt={service.title} />
-                            </div>
+                            {service.heroImageUrl && (
+                                <div className="aximo-service-details-thumb">
+                                    <img src={service.heroImageUrl} alt={service.title} />
+                                </div>
+                            )}
 
-                            {/* Title and Content */}
+                            {/* Main Content */}
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="aximo-default-content">
-                                        <h2 style={{ fontSize: '28px' }}>
-                                            <span className="aximo-title-animation">
+                                        <h2 style={{ fontSize: '28px', lineHeight: '1.3', marginBottom: '16px' }}>
+                                            <span className="aximo-title-animation" style={{ fontWeight: '700', fontSize: '32px' }}>
                                                 {service.title}
                                             </span>
-                                            {service.subtitle}
+                                            {service.subtitle && (
+                                                <>
+                                                    <br />
+                                                    <span style={{ fontSize: '20px', fontWeight: '500', color: '#666' }}>
+                                                        {service.subtitle}
+                                                    </span>
+                                                </>
+                                            )}
                                         </h2>
                                         <p>{service.description}</p>
                                         {service.additionalDescription && (
@@ -66,17 +76,14 @@ function SoftwareDevelopmentDetails() {
                                 {service.sideImageUrl && (
                                     <div className="col-lg-4">
                                         <div className="aximo-service-side-thumb" style={{ border: 'none' }}>
-                                            <img
-                                                src={service.sideImageUrl}
-                                                alt="Service Side Image"
-                                            />
+                                            <img src={service.sideImageUrl} alt="Service Side Image" />
                                         </div>
                                     </div>
                                 )}
                             </div>
 
                             {/* Features Section */}
-                            {service.serviceFeatures && service.serviceFeatures.length > 0 && (
+                            {service.serviceFeatures?.length > 0 && (
                                 <div className="row">
                                     {service.serviceFeatures.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="col-lg-6">
@@ -84,9 +91,7 @@ function SoftwareDevelopmentDetails() {
                                                 <h3>{feature.featureTitle}</h3>
                                                 <ul>
                                                     {feature.featurePoints?.map((point, pointIndex) => (
-                                                        <li key={pointIndex}>
-                                                            {point.point}
-                                                        </li>
+                                                        <li key={pointIndex}>{point.point}</li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -95,16 +100,15 @@ function SoftwareDevelopmentDetails() {
                                 </div>
                             )}
 
-                            {/* Working Approach (Converted to Paragraphs) */}
-                            {service.workingApproach && service.workingApproach.length > 0 && (
+                            {/* Working Approach */}
+                            {service.workingApproach?.length > 0 && (
                                 <div className="aximo-working-approach" style={{ marginTop: '40px' }}>
                                     <h3>Our Working Approach</h3>
                                     <div className="aximo-approach-steps">
                                         {service.workingApproach.map((step, stepIndex) => (
                                             <div key={stepIndex} className="aximo-approach-item" style={{ marginBottom: '20px' }}>
-                                                <p>
-                                                    <strong>{step.stepTitle}:</strong> {step.stepDescription}
-                                                </p>
+                                                <h4>{stepIndex + 1}. {step.stepTitle}</h4>
+                                                <p>{step.stepDescription}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -115,7 +119,7 @@ function SoftwareDevelopmentDetails() {
                 )}
 
                 {/* Pagination Controls */}
-                <div className="pagination-controls">
+                <div className="pagination-controls" style={{ textAlign: 'center', marginTop: '50px', padding: '20px' }}>
                     <button
                         className="pagination-button"
                         disabled={currentPage === 1 || loading}
