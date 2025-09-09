@@ -11,9 +11,9 @@ const testimonialsData = [
 		rating: 5,
 		title: "Super customer service!",
 		description:
-			"Excellent customer service and I was really impressed and happy with my purchase especially as it was a last minute order which got to me in time, and when it arrived I was very happy with the design and size and so was the recipient.",
-		author: "William Jack",
-		designation: "Founder@XYZ",
+			"Fearless exceeded our expectations! We made a last-minute request for Aurora Ghana, and everything was delivered perfectly on time. The design was professional, the quality was excellent, and the team went the extra mile to make sure everything looked amazing.",
+		author: "M. Dekruijff",
+		designation: "Aurora Ghana",
 		img: Thumb1Img,
 	},
 	{
@@ -21,9 +21,9 @@ const testimonialsData = [
 		rating: 4,
 		title: "Exceptional creativity and vision",
 		description:
-			"Working Mthemeus was a game-changer for our brand. Their exceptional creativity & vision breathed new life into our visual. The logo they perfectly captures our essence & has become instantly recognizable. We couldn't be happier the results!",
-		author: "Smith Align",
-		designation: "Businessman",
+			"Partnering with Fearless was a game-changer for Kolmesh. Their creativity and vision completely redefined our visual identity. The new logo and brand elements now capture the heart of our company, and our audience has responded positively ever since!",
+		author: "Gary",
+		designation: "Manager, Kolmesh Ltd",
 		img: Thumb2Img,
 	},
 	{
@@ -31,9 +31,9 @@ const testimonialsData = [
 		rating: 5,
 		title: "Innovative and professional",
 		description:
-			"I can't say enough good things about them. Their team is not only incredibly talented but also highly professional. They listened to our ideas and brought to life in ways we couldn't have imagined. Their innovative approach and dedication to our project.",
-		author: "Smith Align",
-		designation: "Milano Joe",
+			"Fearless brought fresh ideas and energy to our campaign at Giant Foods. Their innovative approach, attention to detail, and professionalism made the entire process smooth. The final results were beyond what we imagined, and our customers loved it.",
+		author: "M. KOTAN",
+		designation: "Giant Industry, Head",
 		img: Thumb3Img,
 	},
 	{
@@ -41,12 +41,13 @@ const testimonialsData = [
 		rating: 4,
 		title: "Transformed our brand",
 		description:
-			"Our partnership with Mthemeus transformed our brand from ordinary to extraordinary. Their branding expertise and design work elevated our marketing materials to a whole new level. Our customers have taken notice, and boost in brand recognition.",
-		author: "Danial Mark",
-		designation: "Marketing Director",
+			"Fenoutech’s collaboration with Fearless completely transformed how we present ourselves. Our marketing materials now look modern and polished. The boost in customer engagement and recognition has been impressive since we rolled out the new visuals.",
+		author: "H. Houngnandan",
+		designation: "Cyber Security Expert, Fenoutech",
 		img: Thumb4Img,
 	},
 ];
+
 
 function Testimonial() {
 	return (
