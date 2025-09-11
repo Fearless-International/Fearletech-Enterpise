@@ -22,6 +22,10 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Portfolio],
+  cors: [
+    'https://panther.fearlessint.com',
+    'https://www.panther.fearlessint.com'
+  ], // Allow requests from your frontend's origin
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
