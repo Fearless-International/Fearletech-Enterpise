@@ -127,13 +127,14 @@ function Portfolio() {
                     </div>
                   </div>
                   <div className="col-lg-7">
-                    <div className="img">
-                      <img 
-                        src={`${process.env.VITE_PAYLOAD_URL}${item.image?.url}`} 
-                        alt={item.image?.alt || item.title} 
-                      />
-                    </div>
-                  </div>
+  <div className="img">
+    <img
+      src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
+      alt={item.image?.alt || item.title}
+    />
+  </div>
+</div>
+
                 </div>
               </div>
             ))}
