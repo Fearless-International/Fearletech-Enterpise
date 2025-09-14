@@ -12,5 +12,17 @@ export const payloadClient = {
         console.error('Error fetching portfolio:', error);
         throw error;
     }
+  },
+
+  // Blog methods
+  getBlogPosts: async (page = 1, limit = 3) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/blog?limit=${limit}&page=${page}&sort=-publishDate`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching blog posts:', error);
+        throw error;
+    }
   }
 };
