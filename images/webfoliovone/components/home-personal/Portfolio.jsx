@@ -1,27 +1,27 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { payloadClient } from '../lib/payloadClient';
+
 
 function Portfolio() {
   const [portfolioItems, setPortfolioItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchPortfolioItems();
-  }, []);
-
-  const fetchPortfolioItems = async () => {
-    setLoading(true);
-    try {
-      const response = await payloadClient.getPortfolioItems(1, 5);
-      setPortfolioItems(response.docs);
-    } catch (error) {
-      console.error('Error fetching portfolio:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      fetchPortfolioItems();
+    }, []);
+  
+    const fetchPortfolioItems = async () => {
+      setLoading(true);
+      try {
+        const response = await payloadClient.getPortfolioItems(1, 5);
+        setPortfolioItems(response.docs);
+      } catch (error) {
+        console.error('Error fetching portfolio:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
   function Playing() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -57,20 +57,19 @@ function Portfolio() {
       });
     });
   }
-
   useEffect(() => {
-    if (!loading && portfolioItems.length > 0) {
-      Playing();
-    }
+      if (!loading && portfolioItems.length > 0) {
+        Playing();
+      }
+  
+      // Clean up function
+      return () => {
+        // Dispose GSAP ScrollTrigger instances
+        ScrollTrigger.getAll().forEach((instance) => instance.kill());
+      };
+    }, [loading, portfolioItems]);
 
-    // Clean up function
-    return () => {
-      // Dispose GSAP ScrollTrigger instances
-      ScrollTrigger.getAll().forEach((instance) => instance.kill());
-    };
-  }, [loading, portfolioItems]);
-
-  return (
+    return (
     <section className="work-card section-padding pb-0">
       <div className="container">
         <div className="sec-head mb-80">
@@ -94,7 +93,8 @@ function Portfolio() {
             </div>
           </div>
         </div>
-        
+
+        {/* Injected loading + dynamic rendering */}
         {loading ? (
           <div className="loader">
             <div className="spinner"></div>
@@ -127,20 +127,20 @@ function Portfolio() {
                     </div>
                   </div>
                   <div className="col-lg-7">
-  <div className="img">
-    <img
-      src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
-      alt={item.image?.alt || item.title}
-    />
-  </div>
-</div>
-
+                    <div className="img">
+                      <img
+                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
+                        alt={item.image?.alt || item.title}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+
       <div className="sec-bottom mt-100">
         <div className="main-bg d-flex align-items-center">
           <h6 className="fz-14 fw-400">
