@@ -82,7 +82,7 @@ function Blog() {
                   <div className="cont pt-30">
                     <h5>{post.title}</h5>
                     <a
-                      href={post.blogDetailsLink}
+                      href={`/blog/${post.slug}`}
                       className="butn-crev d-flex align-items-center mt-30"
                     >
                       <span className="hover-this">

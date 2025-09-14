@@ -14,7 +14,7 @@ export const payloadClient = {
     }
   },
 
-  // Blog methods
+    // Blog methods
   getBlogPosts: async (page = 1, limit = 3) => {
     try {
         const response = await fetch(`${PAYLOAD_API_URL}/api/blog?limit=${limit}&page=${page}&sort=-publishDate`);
@@ -25,5 +25,27 @@ export const payloadClient = {
         throw error;
     }
   },
+
+  getBlogPostBySlug: async (slug) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/blog?where[slug][equals]=${slug}&limit=1`);
+        const data = await response.json();
+        return data.docs[0] || null;
+    } catch (error) {
+        console.error('Error fetching blog post by slug:', error);
+        throw error;
+    }
+  },
+
+  getLatestBlogPosts: async (limit = 3) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/blog?limit=${limit}&sort=-publishDate`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching latest blog posts:', error);
+        throw error;
+    }
+  }
   
 };
