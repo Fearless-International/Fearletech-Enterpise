@@ -28,13 +28,6 @@ function Portfolio() {
     gsap.registerPlugin(ScrollTrigger);
 
     const cards = document.querySelectorAll('.cards .card-item');
-    
-    // Exit if no cards found
-    if (cards.length === 0) {
-      console.log('No cards found for animation');
-      return;
-    }
-
     let stickDistance = 0;
 
     const firstCardST = ScrollTrigger.create({
@@ -104,7 +97,6 @@ function Portfolio() {
           </div>
         </div>
 
-        {/* Injected loading + dynamic rendering */}
         {loading ? (
           <div className="loader">
             <div className="spinner"></div>
@@ -137,11 +129,10 @@ function Portfolio() {
                     </div>
                   </div>
                   <div className="col-lg-7">
-                    <div className="img" style={{ overflow: 'hidden', borderRadius: '12px', width: '100%' }}>
-                      <img
-                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
-                        alt={item.image?.alt || item.title}
-                        style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                    <div className="img">
+                      <img 
+                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`} 
+                        alt={item.image?.alt || item.title} 
                       />
                     </div>
                   </div>
@@ -151,7 +142,6 @@ function Portfolio() {
           </div>
         )}
       </div>
-
       <div className="sec-bottom mt-100">
         <div className="main-bg d-flex align-items-center">
           <h6 className="fz-14 fw-400">
