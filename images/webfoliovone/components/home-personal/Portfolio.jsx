@@ -1,8 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { payloadClient } from '../lib/payloadClient';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Portfolio() {
   const [portfolioItems, setPortfolioItems] = useState([]);
