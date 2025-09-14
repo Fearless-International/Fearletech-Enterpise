@@ -74,8 +74,8 @@ function Blog() {
                   </div>
                   <div className="img fit-img">
                     <img 
-                      src={`${process.env.VITE_PAYLOAD_URL}${post.image?.url}`} 
-                      alt={post.image?.alt || post.title} 
+                      src={post.image} 
+                      alt={post.title} 
                     />
                   </div>
                   <div className="cont pt-30">
