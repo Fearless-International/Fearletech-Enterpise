@@ -23,9 +23,23 @@ function Portfolio() {
   };
 
   function Playing() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+      console.error('GSAP not loaded');
+      return;
+    }
+
     gsap.registerPlugin(ScrollTrigger);
+    
+    // Refresh ScrollTrigger before creating new instances
+    ScrollTrigger.refresh();
 
     const cards = document.querySelectorAll('.cards .card-item');
+    
+    if (cards.length === 0) {
+      console.log('No cards found');
+      return;
+    }
+
     let stickDistance = 0;
 
     const firstCardST = ScrollTrigger.create({
@@ -96,7 +110,9 @@ function Portfolio() {
         </div>
 
         {loading ? (
-          <p>Loading portfolio items...</p>
+          <div className="loader">
+            <div className="spinner"></div>
+          </div>
         ) : (
           <div className="cards">
             {portfolioItems.map((item) => (
