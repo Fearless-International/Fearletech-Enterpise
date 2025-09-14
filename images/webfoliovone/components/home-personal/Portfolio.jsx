@@ -96,9 +96,7 @@ function Portfolio() {
         </div>
 
         {loading ? (
-          <div className="loader">
-            <div className="spinner"></div>
-          </div>
+          <p>Loading portfolio items...</p>
         ) : (
           <div className="cards">
             {portfolioItems.map((item) => (
