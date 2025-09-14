@@ -28,6 +28,13 @@ function Portfolio() {
     gsap.registerPlugin(ScrollTrigger);
 
     const cards = document.querySelectorAll('.cards .card-item');
+    
+    // Exit if no cards found
+    if (cards.length === 0) {
+      console.log('No cards found for animation');
+      return;
+    }
+
     let stickDistance = 0;
 
     const firstCardST = ScrollTrigger.create({
