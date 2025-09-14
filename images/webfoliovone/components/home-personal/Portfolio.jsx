@@ -29,9 +29,6 @@ function Portfolio() {
     }
 
     gsap.registerPlugin(ScrollTrigger);
-    
-    // Refresh ScrollTrigger before creating new instances
-    ScrollTrigger.refresh();
 
     const cards = document.querySelectorAll('.cards .card-item');
     
