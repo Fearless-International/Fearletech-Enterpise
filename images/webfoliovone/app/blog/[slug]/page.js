@@ -7,7 +7,7 @@ import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import Script from 'next/script';
 import Header from '@/components/blog-details/Header';
-import BlogDetails from '@/components/blog-details/BlogDetails'; // Your updated component
+import Blog from '@/components/blog-details/Blog';
 
 export const metadata = {
   title: 'Blog Details - webfolio',
@@ -35,7 +35,7 @@ export default function BlogSlugPage({ params }) {
         <div id="smooth-content">
           <main className="main-bg">
             <Header />
-            <BlogDetails slug={params.slug} />
+            <Blog slug={params.slug} />
           </main>
           <Footer />
         </div>
