@@ -23,23 +23,9 @@ function Portfolio() {
   };
 
   function Playing() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-      console.error('GSAP not loaded');
-      return;
-    }
-
     gsap.registerPlugin(ScrollTrigger);
-    
-    // Refresh ScrollTrigger before creating new instances
-    ScrollTrigger.refresh();
 
     const cards = document.querySelectorAll('.cards .card-item');
-    
-    if (cards.length === 0) {
-      console.log('No cards found');
-      return;
-    }
-
     let stickDistance = 0;
 
     const firstCardST = ScrollTrigger.create({
@@ -108,7 +94,7 @@ function Portfolio() {
             </div>
           </div>
         </div>
-
+        
         {loading ? (
           <div className="loader">
             <div className="spinner"></div>
@@ -143,8 +129,8 @@ function Portfolio() {
                   <div className="col-lg-7">
                     <div className="img">
                       <img 
-                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`} 
-                        alt={item.image?.alt || item.title} 
+                        src={item.image} 
+                        alt={item.title} 
                       />
                     </div>
                   </div>
