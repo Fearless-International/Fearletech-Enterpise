@@ -24,5 +24,26 @@ export const payloadClient = {
         console.error('Error fetching blog posts:', error);
         throw error;
     }
+  },
+  getBlogPostById: async (id) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/blog/${id}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching blog post:', error);
+        throw error;
+    }
+  },
+
+  getLatestBlogPosts: async (limit = 3) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/blog?limit=${limit}&sort=-publishDate`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching latest blog posts:', error);
+        throw error;
+    }
   }
 };
