@@ -129,12 +129,13 @@ function Portfolio() {
                     </div>
                   </div>
                   <div className="col-lg-7">
-                    <div className="img">
-                      <img
-                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
-                        alt={item.image?.alt || item.title}
-                      />
-                    </div>
+                    <div className="img" style={{ overflow: 'hidden', borderRadius: '12px', width: '100%' }}>
+  <img
+    src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
+    alt={item.image?.alt || item.title}
+    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+  />
+</div>
                   </div>
                 </div>
               </div>
