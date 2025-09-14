@@ -18,6 +18,16 @@ export const Blog: CollectionConfig = {
       required: true,
     },
     {
+      name: 'authorImage',
+      type: 'text',
+      label: 'Author Image URL',
+    },
+    {
+      name: 'authorBio',
+      type: 'textarea',
+      label: 'Author Biography',
+    },
+    {
       name: 'publishDate',
       type: 'date',
       required: true,
@@ -25,7 +35,7 @@ export const Blog: CollectionConfig = {
     {
       name: 'image',
       type: 'text',
-      label: 'Image URL',
+      label: 'Main Image URL',
       required: true,
     },
     {
@@ -37,6 +47,52 @@ export const Blog: CollectionConfig = {
       name: 'content',
       type: 'richText',
       label: 'Blog Content',
+      required: true,
+    },
+    {
+      name: 'quote',
+      type: 'textarea',
+      label: 'Featured Quote',
+    },
+    {
+      name: 'quoteAuthor',
+      type: 'text',
+      label: 'Quote Author',
+      defaultValue: 'UiCamp',
+    },
+    {
+      name: 'additionalImages',
+      type: 'array',
+      label: 'Additional Content Images',
+      fields: [
+        {
+          name: 'imageUrl',
+          type: 'text',
+          label: 'Image URL',
+        },
+      ],
+    },
+    {
+      name: 'tags',
+      type: 'array',
+      fields: [
+        {
+          name: 'tag',
+          type: 'text',
+          required: true,
+        },
+      ],
+    },
+    {
+      name: 'categories',
+      type: 'array',
+      fields: [
+        {
+          name: 'category',
+          type: 'text',
+          required: true,
+        },
+      ],
     },
     {
       name: 'blogGridLink',
