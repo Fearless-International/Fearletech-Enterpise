@@ -4,30 +4,36 @@ import { payloadClient } from '../lib/payloadClient';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
 function Portfolio() {
   const [portfolioItems, setPortfolioItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    useEffect(() => {
-      fetchPortfolioItems();
-    }, []);
-  
-    const fetchPortfolioItems = async () => {
-      setLoading(true);
-      try {
-        const response = await payloadClient.getPortfolioItems(1, 5);
-        setPortfolioItems(response.docs);
-      } catch (error) {
-        console.error('Error fetching portfolio:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchPortfolioItems();
+  }, []);
+
+  const fetchPortfolioItems = async () => {
+    setLoading(true);
+    try {
+      const response = await payloadClient.getPortfolioItems(1, 5);
+      setPortfolioItems(response.docs);
+    } catch (error) {
+      console.error('Error fetching portfolio:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   function Playing() {
     gsap.registerPlugin(ScrollTrigger);
 
     const cards = document.querySelectorAll('.cards .card-item');
+    
+    if (cards.length === 0) return;
+
+    // Clear any existing ScrollTrigger instances
+    ScrollTrigger.getAll().forEach(st => st.kill());
+
     let stickDistance = 0;
 
     const firstCardST = ScrollTrigger.create({
@@ -41,10 +47,19 @@ function Portfolio() {
     });
 
     cards.forEach((card, index) => {
-      const scale = 1 - (cards.length - index) * 0.025;
+      // Improved scaling calculation
+      const scale = 1 - (cards.length - index - 1) * 0.02; // Reduced scale factor
+      
+      // Set initial transform origin to center
+      gsap.set(card, {
+        transformOrigin: '50% 50%'
+      });
+
       const scaleDown = gsap.to(card, {
         scale: scale,
-        transformOrigin: '50% ' + (lastCardST.start + stickDistance),
+        transformOrigin: '50% 50%', // Keep origin at center
+        ease: 'none',
+        paused: true
       });
 
       ScrollTrigger.create({
@@ -53,25 +68,31 @@ function Portfolio() {
         end: () => lastCardST.start + stickDistance,
         pin: true,
         pinSpacing: false,
-        ease: 'none',
         animation: scaleDown,
         toggleActions: 'restart none none reverse',
+        onUpdate: (self) => {
+          // Update scale based on scroll progress
+          scaleDown.progress(self.progress);
+        }
       });
     });
   }
-  useEffect(() => {
-      if (!loading && portfolioItems.length > 0) {
-        Playing();
-      }
-  
-      // Clean up function
-      return () => {
-        // Dispose GSAP ScrollTrigger instances
-        ScrollTrigger.getAll().forEach((instance) => instance.kill());
-      };
-    }, [loading, portfolioItems]);
 
-    return (
+  useEffect(() => {
+    if (!loading && portfolioItems.length > 0) {
+      // Add a small delay to ensure DOM is ready
+      setTimeout(() => {
+        Playing();
+      }, 100);
+    }
+
+    // Clean up function
+    return () => {
+      ScrollTrigger.getAll().forEach((instance) => instance.kill());
+    };
+  }, [loading, portfolioItems]);
+
+  return (
     <section className="work-card section-padding pb-0">
       <div className="container">
         <div className="sec-head mb-80">
@@ -96,22 +117,26 @@ function Portfolio() {
           </div>
         </div>
 
-        {/* Injected loading + dynamic rendering */}
+        {/* Loading state */}
         {loading ? (
           <div className="loader">
             <div className="spinner"></div>
           </div>
         ) : (
-          <div className="cards">
-            {portfolioItems.map((item) => (
-              <div key={item.id} className="card-item sub-bg">
+          <div className="cards" style={{ overflow: 'visible' }}>
+            {portfolioItems.map((item, index) => (
+              <div key={item.id} className="card-item sub-bg" style={{ 
+                position: 'relative',
+                zIndex: portfolioItems.length - index,
+                marginBottom: index < portfolioItems.length - 1 ? '2rem' : '0'
+              }}>
                 <div className="row">
                   <div className="col-lg-5">
                     <div className="cont">
                       <div>
                         <div className="mb-15">
-                          {item.tags?.map((tagItem, index) => (
-                            <a key={index} href={item.portfolioLink} className="tag">
+                          {item.tags?.map((tagItem, tagIndex) => (
+                            <a key={tagIndex} href={item.portfolioLink} className="tag">
                               {tagItem.tag}
                             </a>
                           ))}
@@ -129,13 +154,27 @@ function Portfolio() {
                     </div>
                   </div>
                   <div className="col-lg-7">
-                    <div className="img" style={{ overflow: 'hidden', borderRadius: '12px', width: '100%' }}>
-  <img
-    src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
-    alt={item.image?.alt || item.title}
-    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-  />
-</div>
+                    <div 
+                      className="img" 
+                      style={{ 
+                        overflow: 'hidden', 
+                        borderRadius: '12px', 
+                        width: '100%',
+                        position: 'relative'
+                      }}
+                    >
+                      <img
+                        src={`https://fearletech-enterpise.onrender.com${item.image?.url}`}
+                        alt={item.image?.alt || item.title}
+                        style={{ 
+                          display: 'block', 
+                          width: '100%', 
+                          height: 'auto', 
+                          objectFit: 'cover',
+                          maxHeight: '400px' // Limit image height
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
