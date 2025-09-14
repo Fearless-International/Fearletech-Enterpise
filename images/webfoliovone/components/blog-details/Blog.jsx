@@ -29,13 +29,14 @@ function BlogDetails({ blogId }) {
   const fetchLatestPosts = async () => {
     try {
       const response = await payloadClient.getLatestBlogPosts(3);
-      setLatestPosts(response.docs);
+      setLatestPosts(response.docs || []);
     } catch (error) {
       console.error('Error fetching latest posts:', error);
     }
   };
 
   const formatDate = (dateString) => {
+    if (!dateString) return '';
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
@@ -45,6 +46,7 @@ function BlogDetails({ blogId }) {
   };
 
   const formatDateShort = (dateString) => {
+    if (!dateString) return { day: '', month: '' };
     const date = new Date(dateString);
     return {
       day: date.getDate(),
@@ -84,18 +86,24 @@ function BlogDetails({ blogId }) {
             <div className="main-post">
               <div className="item pb-60">
                 <article>
-                  <div className="post-img mb-30">
-                    <img src={blogPost.image} alt={blogPost.title} />
-                  </div>
+                  {blogPost.image && (
+                    <div className="post-img mb-30">
+                      <img src={blogPost.image} alt={blogPost.title || ''} />
+                    </div>
+                  )}
                   <div className="post-meta mb-30">
-                    <span>By: {blogPost.author}</span>
-                    <span className="ml-30">{formatDate(blogPost.publishDate)}</span>
+                    <span>By: {blogPost.author || 'Admin'}</span>
+                    {blogPost.publishDate && (
+                      <span className="ml-30">{formatDate(blogPost.publishDate)}</span>
+                    )}
                   </div>
                   <h1 className="mb-30">{blogPost.title}</h1>
-                  <div 
-                    className="post-content"
-                    dangerouslySetInnerHTML={{ __html: blogPost.content }}
-                  />
+                  {blogPost.content && (
+                    <div 
+                      className="post-content"
+                      dangerouslySetInnerHTML={{ __html: blogPost.content }}
+                    />
+                  )}
                 </article>
 
                 {blogPost.quote && (
@@ -104,7 +112,7 @@ function BlogDetails({ blogId }) {
                       <span className="l-block">
                         {blogPost.quote}
                       </span>
-                      <span className="sub-title mt-20 mb-0"> - {blogPost.quoteAuthor}</span>
+                      <span className="sub-title mt-20 mb-0"> - {blogPost.quoteAuthor || 'UiCamp'}</span>
                     </h6>
                   </div>
                 )}
@@ -166,7 +174,7 @@ function BlogDetails({ blogId }) {
                       <div className="img">
                         <img
                           src={blogPost.authorImage}
-                          alt={blogPost.author}
+                          alt={blogPost.author || ''}
                           className="circle-img"
                         />
                       </div>
@@ -269,7 +277,7 @@ function BlogDetails({ blogId }) {
                       <div>
                         <div className="img">
                           <a href={`/blog/${post.slug}`}>
-                            <img src={post.image} alt={post.title} />
+                            <img src={post.image} alt={post.title || ''} />
                             <span className="date">
                               <span>
                                 {dateShort.day} / <br /> {dateShort.month}
