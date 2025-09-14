@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-export const Portfolio: CollectionConfig = {
+export const PortfolioItems: CollectionConfig = {
   slug: 'portfolio',
   access: {
     read: () => true,
@@ -29,8 +29,8 @@ export const Portfolio: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+      label: 'Image URL',
       required: true,
     },
     {

@@ -24,8 +24,8 @@ export const Blog: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+      label: 'Image URL',
       required: true,
     },
     {

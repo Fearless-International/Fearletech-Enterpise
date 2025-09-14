@@ -9,7 +9,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { Portfolio } from './collections/PortfolioItems'
+import { PortfolioItems } from './collections/PortfolioItems'
 import { Blog } from './collections/Blog'
 
 const filename = fileURLToPath(import.meta.url)
@@ -22,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Portfolio, Blog],
+  collections: [Users, Media, PortfolioItems, Blog],
   cors: [
     'https://panther.fearlessint.com',
     'https://www.panther.fearlessint.com'
