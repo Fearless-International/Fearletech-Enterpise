@@ -7,6 +7,15 @@ export const Blog: CollectionConfig = {
   },
   fields: [
     {
+      name: 'slug',
+      type: 'text',
+      required: true,
+      unique: true,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,
@@ -18,10 +27,9 @@ export const Blog: CollectionConfig = {
       required: true,
     },
     {
-      name: 'author',
+      name: 'authorImage',
       type: 'text',
-      defaultValue: 'Admin',
-      required: true,
+      label: 'Author Image URL',
     },
     {
       name: 'authorBio',
