@@ -2,22 +2,22 @@
 import React, { useEffect, useState } from 'react';
 import { payloadClient } from '../lib/payloadClient';
 
-function BlogDetails({ blogId }) {
+function BlogDetails({ slug }) {
   const [blogPost, setBlogPost] = useState(null);
   const [latestPosts, setLatestPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (blogId) {
+    if (slug) {
       fetchBlogDetails();
       fetchLatestPosts();
     }
-  }, [blogId]);
+  }, [slug]);
 
   const fetchBlogDetails = async () => {
     setLoading(true);
     try {
-      const response = await payloadClient.getBlogPostById(blogId);
+      const response = await payloadClient.getBlogPostBySlug(slug);
       setBlogPost(response);
     } catch (error) {
       console.error('Error fetching blog details:', error);
