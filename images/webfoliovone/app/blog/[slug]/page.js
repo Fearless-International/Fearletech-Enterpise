@@ -9,6 +9,22 @@ import Script from 'next/script';
 import Header from '@/components/blog-details/Header';
 import Blog from '@/components/blog-details/Blog';
 
+// Generate static params for all blog posts
+export async function generateStaticParams() {
+  try {
+    const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
+    const response = await fetch(`${PAYLOAD_API_URL}/api/blog?limit=100`);
+    const data = await response.json();
+    
+    return data.docs?.map((post) => ({
+      slug: post.slug,
+    })) || [];
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
+
 export const metadata = {
   title: 'Blog Details - webfolio',
   icons: {
