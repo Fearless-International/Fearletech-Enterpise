@@ -6,6 +6,7 @@ import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import Script from 'next/script';
+import Header from '@/components/blog-details/Header';
 import Blog from '@/components/blog-details/Blog';
 
 // Generate static params for all blog posts
@@ -49,6 +50,7 @@ export default function BlogSlugPage({ params }) {
         <Navbar />
         <div id="smooth-content">
           <main className="main-bg">
+            <Header />
             <Blog slug={params.slug} />
           </main>
           <Footer />
