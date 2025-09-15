@@ -2,6 +2,7 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
+
 function Header() {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -15,9 +16,11 @@ function Header() {
 
     return () => tl.kill();
   }, []);
+
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+
   return (
     <div className="header blog-header section-padding pb-0">
       <div className="container mt-80">
@@ -33,48 +36,15 @@ function Header() {
                 </a>
               </div>
               <h1 className="fz-55 mt-30">
-                Network of wormholes colonies extraordinary claims require.
+                Bridging the Gap Between Design and Development
               </h1>
-            </div>
-            <div className="info d-flex mt-40 align-items-center">
-              <div className="left-info">
-                <div className="d-flex align-items-center">
-                  <div className="author-info">
-                    <div className="d-flex align-items-center">
-                      <a href="#0" className="circle-60">
-                        <img
-                          src="/assets/imgs/blog/author.png"
-                          alt=""
-                          className="circle-img"
-                        />
-                      </a>
-                      <a href="#0" className="ml-20">
-                        <span className="opacity-7">Author</span>
-                        <h6 className="fz-16">UiCamp</h6>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="date ml-50">
-                    <a href="#0">
-                      <span className="opacity-7">Published</span>
-                      <h6 className="fz-16">August 6, 2021</h6>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="right-info ml-auto">
-                <div>
-                  <span className="pe-7s-comment fz-18 mr-10"></span>
-                  <span className="opacity-7">02 Comments</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
       <div
         className="background bg-img mt-80"
-        data-background="/assets/imgs/blog/b1.jpg"
+        data-background="https://images.unsplash.com/photo-1559027615-5f999f1c83f8"
       ></div>
     </div>
   );
