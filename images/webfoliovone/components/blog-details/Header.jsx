@@ -2,7 +2,8 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
-function Header() {
+
+function Header({ blogPost }) {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2.5');
@@ -15,9 +16,21 @@ function Header() {
 
     return () => tl.kill();
   }, []);
+
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+
+  const formatDate = (dateString) => {
+    if (!dateString) return 'August 6, 2021'; // fallback
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
   return (
     <div className="header blog-header section-padding pb-0">
       <div className="container mt-80">
@@ -25,15 +38,21 @@ function Header() {
           <div className="col-lg-11">
             <div className="caption">
               <div className="sub-title fz-12">
-                <a href="#0">
-                  <span>Design , </span>
-                </a>
-                <a href="#0">
-                  <span>Development</span>
-                </a>
+                {blogPost?.categories && blogPost.categories.length > 0 ? (
+                  blogPost.categories.slice(0, 2).map((cat, index) => (
+                    <a key={index} href="#0">
+                      <span>{cat.category}{index < blogPost.categories.length - 1 ? ' , ' : ''}</span>
+                    </a>
+                  ))
+                ) : (
+                  <>
+                    <a href="#0"><span>Design , </span></a>
+                    <a href="#0"><span>Development</span></a>
+                  </>
+                )}
               </div>
               <h1 className="fz-55 mt-30">
-                Network of wormholes colonies extraordinary claims require.
+                {blogPost?.title || 'Network of wormholes colonies extraordinary claims require.'}
               </h1>
             </div>
             <div className="info d-flex mt-40 align-items-center">
@@ -43,21 +62,21 @@ function Header() {
                     <div className="d-flex align-items-center">
                       <a href="#0" className="circle-60">
                         <img
-                          src="/assets/imgs/blog/author.png"
+                          src={blogPost?.authorImage || "/assets/imgs/blog/author.png"}
                           alt=""
                           className="circle-img"
                         />
                       </a>
                       <a href="#0" className="ml-20">
                         <span className="opacity-7">Author</span>
-                        <h6 className="fz-16">UiCamp</h6>
+                        <h6 className="fz-16">{blogPost?.author || 'UiCamp'}</h6>
                       </a>
                     </div>
                   </div>
                   <div className="date ml-50">
                     <a href="#0">
                       <span className="opacity-7">Published</span>
-                      <h6 className="fz-16">August 6, 2021</h6>
+                      <h6 className="fz-16">{formatDate(blogPost?.publishDate)}</h6>
                     </a>
                   </div>
                 </div>
@@ -74,7 +93,7 @@ function Header() {
       </div>
       <div
         className="background bg-img mt-80"
-        data-background="/assets/imgs/blog/b1.jpg"
+        data-background={blogPost?.image || "/assets/imgs/blog/b1.jpg"}
       ></div>
     </div>
   );
