@@ -153,20 +153,20 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span className="rolling-text">Pages</span>
+                <span className="rolling-text">Content</span>
               </a>
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/page-about">
-                    About Us
+                    About me
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="/page-services">
-                    Services
+                    My Services
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a className="dropdown-item" href="/page-services-details">
                     Services Details
                   </a>
@@ -180,10 +180,10 @@ function Navbar() {
                   <a className="dropdown-item" href="/page-team-details">
                     Team Details
                   </a>
-                </li>
+                </li>*/}
                 <li>
                   <a className="dropdown-item" href="/page-contact">
-                    Contact Us
+                    Contact me
                   </a>
                 </li>
                 <li>
@@ -191,11 +191,11 @@ function Navbar() {
                     FAQS
                   </a>
                 </li>
-                <li>
+                {/*<li>
                   <a className="dropdown-item" href="/page-404">
                     Error 404
                   </a>
-                </li>
+                </li>*/}
               </ul>
             </li>
             <li
