@@ -44,7 +44,7 @@ function Header() {
       </div>
       <div
         className="background bg-img mt-80"
-        data-background="https://images.unsplash.com/photo-1559027615-5f999f1c83f8"
+        data-background="https://cdn.jsdelivr.net/gh/Fearless-International/Fearletech-Enterpise@main/images/pexels-myburgh-1102797.jpg?raw=true"
       ></div>
     </div>
   );
