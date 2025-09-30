@@ -214,19 +214,19 @@ function Navbar() {
                 <span className="rolling-text">Portfolio</span>
               </a>
               <div className="dropdown-menu">
-                <a className="dropdown-item" href="/portfolio-gallery">
+                {/*<a className="dropdown-item" href="/portfolio-gallery">
                   Gallery
                 </a>
                 <a className="dropdown-item" href="/portfolio-creative">
                   Portfolio Creative
-                </a>
+                </a>*/}
                 <a
                   className="dropdown-item"
                   href="/portfolio-creative-carousel"
                 >
                   Creative Carousel
                 </a>
-                <a className="dropdown-item" href="/portfolio-grid">
+                {/* <a className="dropdown-item" href="/portfolio-grid">
                   Portfolio Grid
                 </a>
                 <a className="dropdown-item" href="/portfolio-masonry">
@@ -234,7 +234,7 @@ function Navbar() {
                 </a>
                 <a className="dropdown-item" href="/project-details">
                   Project Details
-                </a>
+                </a>*/}
               </div>
             </li>
             <li
