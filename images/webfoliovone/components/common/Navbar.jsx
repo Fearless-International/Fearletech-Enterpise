@@ -181,14 +181,14 @@ function Navbar() {
                     Team Details
                   </a>
                 </li>*/}
-                <li>
+                {/*<li>
                   <a className="dropdown-item" href="/page-contact">
                     Contact me
                   </a>
-                </li>
+                </li>*/}
                 <li>
                   <a className="dropdown-item" href="/page-FAQ">
-                    FAQS
+                    Faqs
                   </a>
                 </li>
                 {/*<li>
@@ -224,7 +224,7 @@ function Navbar() {
                   className="dropdown-item"
                   href="/portfolio-creative-carousel"
                 >
-                  Creative Carousel
+                  My works
                 </a>
                 {/* <a className="dropdown-item" href="/portfolio-grid">
                   Portfolio Grid
@@ -237,7 +237,7 @@ function Navbar() {
                 </a>*/}
               </div>
             </li>
-            <li
+            {/*<li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
               className="nav-item dropdown"
@@ -266,12 +266,12 @@ function Navbar() {
                   Blog Details
                 </a>
               </div>
-            </li>
-            <li className="nav-item">
+            </li>*/}
+            {/*<li className="nav-item">
               <a className="nav-link" href="/page-contact">
                 <span className="rolling-text">Contact Us</span>
               </a>
-            </li>
+            </li>*/}
           </ul>
         </div>
 
@@ -280,7 +280,7 @@ function Navbar() {
             href="/page-contact"
             className="butn butn-sm butn-bg main-colorbg radius-5"
           >
-            <span className="text">Let&apos;s contact</span>
+            <span className="text">Let&apos;s connect </span>
           </a>
         </div>
       </div>
