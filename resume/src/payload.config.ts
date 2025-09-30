@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { PortfolioItems } from './collections/PortfolioItems'
 import { Blog } from './collections/Blog'
+import { Portfolio } from './collections/Portfolio'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -22,7 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, PortfolioItems, Blog],
+  collections: [Users, Media, PortfolioItems, Blog, Portfolio],
   cors: [
     'https://panther.fearlessint.com',
     'https://www.panther.fearlessint.com'
