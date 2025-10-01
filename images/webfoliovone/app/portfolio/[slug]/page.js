@@ -1,7 +1,4 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { payloadClient } from '@/lib/payloadClient';
+import generateStylesheetObject from '@/common/generateStylesheetsObject';
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/cusor';
@@ -9,14 +6,8 @@ import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import Script from 'next/script';
-import Header from '@/components/project-details/Header';
-import Challenge from '@/components/project-details/Challenge';
-import Works from '@/components/project-details/Works';
-import Solution from '@/components/project-details/Solution';
-import Wroks2 from '@/components/project-details/Wroks2';
-import Next from '@/components/project-details/Next';
+import PortfolioDetailWrapper from '@/components/portfolio/PortfolioDetailWrapper';
 
-// Add this function at the top level (outside the component)
 export async function generateStaticParams() {
   try {
     const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
@@ -32,33 +23,21 @@ export async function generateStaticParams() {
   }
 }
 
-export default function PortfolioPage() {
-  const params = useParams();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+export const metadata = {
+  title: 'Portfolio Details - webfolio',
+  icons: {
+    icon: '/assets/imgs/favicon.ico',
+    shortcut: '/assets/imgs/favicon.ico',
+    other: generateStylesheetObject([
+      '/assets/css/plugins.css',
+      '/assets/css/style.css',
+      'https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap',
+      'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap',
+    ]),
+  },
+};
 
-  useEffect(() => {
-    if (params.slug) {
-      fetchProject();
-    }
-  }, [params.slug]);
-
-  const fetchProject = async () => {
-    setLoading(true);
-    try {
-      const response = await payloadClient.getPortfolioBySlug(params.slug);
-      setProject(response);
-    } catch (error) {
-      console.error('Error fetching project:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
-
+export default function PortfolioPage({ params }) {
   return (
     <body>
       <LoadingScreen />
@@ -69,12 +48,7 @@ export default function PortfolioPage() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="main-bg o-hidden">
-            <Header project={project} />
-            <Challenge project={project} />
-            <Works project={project} />
-            <Solution project={project} />
-            <Wroks2 project={project} />
-            <Next />
+            <PortfolioDetailWrapper slug={params.slug} />
           </main>
           <Footer />
         </div>
