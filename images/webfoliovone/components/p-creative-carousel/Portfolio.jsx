@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { payloadClient } from '../../lib/payloadClient';
+import { payloadClient } from '../lib/payloadClient';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
