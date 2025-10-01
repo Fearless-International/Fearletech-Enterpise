@@ -9,18 +9,14 @@ import Script from 'next/script';
 import PortfolioDetailWrapper from '@/components/portfolio/PortfolioDetailWrapper';
 
 export async function generateStaticParams() {
-  try {
-    const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
-    const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?limit=100`);
-    const data = await response.json();
-    
-    return data.docs?.map((project) => ({
-      slug: project.slug,
-    })) || [];
-  } catch (error) {
-    console.error('Error generating static params:', error);
-    return [];
-  }
+  const res = await fetch(
+    'https://fearletech-enterpise.onrender.com/api/feaportfolio?limit=100'
+  );
+  const data = await res.json();
+
+  return data.docs?.map((project) => ({
+    slug: project.slug,
+  })) || [];
 }
 
 export const metadata = {
