@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { payloadClient } from '@/lib/payloadClient';
+import { payloadClient } from '@/components/lib/payloadClient';
 import LoadingScreen from '@/components/common/loader';
 import Header from '@/components/project-details/Header';
 import Challenge from '@/components/project-details/Challenge';
