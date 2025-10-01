@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-export const Portfolio: CollectionConfig = {
-  slug: 'portfolio',
+export const FeaPortfolio: CollectionConfig = {
+  slug: 'FeaPortfolio',
   access: {
     read: () => true,
   },
