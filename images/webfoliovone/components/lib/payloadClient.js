@@ -14,26 +14,26 @@ export const payloadClient = {
     }
   },
   getPortfolioBySlug: async (slug) => {
-    try {
-        const response = await fetch(`${PAYLOAD_API_URL}/api/portfolio?where[slug][equals]=${slug}&limit=1`);
-        const data = await response.json();
-        return data.docs[0] || null;
-    } catch (error) {
-        console.error('Error fetching portfolio by slug:', error);
-        throw error;
-    }
-  },
+  try {
+      const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?where[slug][equals]=${slug}&limit=1`);
+      const data = await response.json();
+      return data.docs[0] || null;
+  } catch (error) {
+      console.error('Error fetching portfolio by slug:', error);
+      throw error;
+  }
+},
 
-  getFeaturedPortfolio: async (limit = 4) => {
-    try {
-        const response = await fetch(`${PAYLOAD_API_URL}/api/portfolio?where[featured][equals]=true&limit=${limit}&sort=-createdAt`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching featured portfolio:', error);
-        throw error;
-    }
-  },
+getFeaturedPortfolio: async (limit = 4) => {
+  try {
+      const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?where[featured][equals]=true&limit=${limit}&sort=-createdAt`);
+      const data = await response.json();
+      return data;
+  } catch (error) {
+      console.error('Error fetching featured portfolio:', error);
+      throw error;
+  }
+},
     
   // Blog methods
   getBlogPosts: async (page = 1, limit = 3) => {

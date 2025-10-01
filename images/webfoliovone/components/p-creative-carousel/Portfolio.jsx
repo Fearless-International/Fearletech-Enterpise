@@ -1,10 +1,25 @@
 'use client';
-import React from 'react';
-import data from '@/data/portfolios/works1';
+import React, { useEffect, useState } from 'react';
+import { payloadClient } from '../../lib/payloadClient';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Portfolio() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchPortfolio();
+  }, []);
+
+  const fetchPortfolio = async () => {
+    try {
+      const response = await payloadClient.getPortfolioItems(1, 10);
+      setData(response.docs || []);
+    } catch (error) {
+      console.error('Error fetching portfolio:', error);
+    }
+  };
+
   const swiperOptions = {
     modules: [Pagination, Navigation],
     slidesPerView: 'auto',
@@ -53,12 +68,12 @@ function Portfolio() {
               <SwiperSlide key={i}>
                 <div className="item d-flex align-items-center">
                   <div className="cont">
-                    <h6 className="sub-title main-color mb-15">UI/UX Design</h6>
+                    <h6 className="sub-title main-color mb-15">{item.category || 'UI/UX Design'}</h6>
                     <h2>
                       {item.title} <br /> {item.subTitle}
                     </h2>
                     <a
-                      href="/project-details"
+                      href={`/portfolio/${item.slug}`}
                       className="butn-crev d-flex align-items-center mt-30"
                     >
                       <span className="hover-this">
@@ -70,7 +85,7 @@ function Portfolio() {
                     </a>
                   </div>
                   <div className="img">
-                    <img src={item.img} alt="" className="radius-15" />
+                    <img src={item.thumbnailImage || item.mainImage} alt="" className="radius-15" />
                   </div>
                 </div>
               </SwiperSlide>
