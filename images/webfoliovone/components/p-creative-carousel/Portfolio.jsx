@@ -6,17 +6,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 function Portfolio() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchPortfolio();
   }, []);
 
   const fetchPortfolio = async () => {
+    setLoading(true);
     try {
       const response = await payloadClient.getPortfolioItems(1, 10);
       setData(response.docs || []);
     } catch (error) {
       console.error('Error fetching portfolio:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -24,19 +28,39 @@ function Portfolio() {
     modules: [Pagination, Navigation],
     slidesPerView: 'auto',
     spaceBetween: 80,
-    loop: true,
+    loop: data.length > 1,
     touchRatio: 0.2,
     speed: 1500,
     pagination: {
       el: '.work-crev .swiper-pagination',
       type: 'progressbar',
     },
-
     navigation: {
       nextEl: '.work-crev .swiper-button-next',
       prevEl: '.work-crev .swiper-button-prev',
     },
   };
+
+  if (loading) {
+    return (
+      <section className="work-crev section-padding">
+        <div className="container">
+          <div className="loader">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (data.length === 0) {
+    return (
+      <section className="work-crev section-padding">
+        <div className="container">
+          <p>No portfolio items found.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="work-crev section-padding">
       <div className="container position-re pb-80">
@@ -72,6 +96,7 @@ function Portfolio() {
                     <h2>
                       {item.title} <br /> {item.subTitle}
                     </h2>
+                    
                     <a
                       href={`/portfolio/${item.slug}`}
                       className="butn-crev d-flex align-items-center mt-30"
@@ -85,7 +110,11 @@ function Portfolio() {
                     </a>
                   </div>
                   <div className="img">
-                    <img src={item.thumbnailImage || item.mainImage} alt="" className="radius-15" />
+                    <img 
+                      src={item.thumbnailImage || item.mainImage || '/assets/imgs/works/1/1.jpg'} 
+                      alt={item.title || ''} 
+                      className="radius-15" 
+                    />
                   </div>
                 </div>
               </SwiperSlide>
