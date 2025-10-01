@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { payloadClient } from '@/components/lib/payloadClient';
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/cusor';
@@ -15,47 +12,48 @@ import Solution from '@/components/project-details/Solution';
 import Wroks2 from '@/components/project-details/Wroks2';
 import Next from '@/components/project-details/Next';
 
-// Add this function at the top level (outside the component)
+// ✅ Server-only function (static params)
 export async function generateStaticParams() {
   try {
-    const PAYLOAD_API_URL = process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
+    const PAYLOAD_API_URL =
+      process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
     const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?limit=100`);
     const data = await response.json();
-    
-    return data.docs?.map((project) => ({
-      slug: project.slug,
-    })) || [];
+
+    return (
+      data.docs?.map((project) => ({
+        slug: project.slug,
+      })) || []
+    );
   } catch (error) {
     console.error('Error generating static params:', error);
     return [];
   }
 }
 
-export default function PortfolioPage() {
-  const params = useParams();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+// ✅ Helper to fetch project by slug (server-side)
+async function getProject(slug) {
+  try {
+    const PAYLOAD_API_URL =
+      process.env.VITE_PAYLOAD_URL || 'https://fearletech-enterpise.onrender.com';
+    const response = await fetch(
+      `${PAYLOAD_API_URL}/api/feaportfolio?where[slug][equals]=${slug}`,
+      { cache: 'no-store' } // use "force-cache" if you want SSG
+    );
+    const data = await response.json();
+    return data.docs?.[0] || null;
+  } catch (error) {
+    console.error('Error fetching project:', error);
+    return null;
+  }
+}
 
-  useEffect(() => {
-    if (params.slug) {
-      fetchProject();
-    }
-  }, [params.slug]);
+// ✅ Page component (server-side)
+export default async function PortfolioPage({ params }) {
+  const project = await getProject(params.slug);
 
-  const fetchProject = async () => {
-    setLoading(true);
-    try {
-      const response = await payloadClient.getPortfolioBySlug(params.slug);
-      setProject(response);
-    } catch (error) {
-      console.error('Error fetching project:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <LoadingScreen />;
+  if (!project) {
+    return <p>Project not found.</p>;
   }
 
   return (
@@ -88,7 +86,10 @@ export default function PortfolioPage() {
       <Script strategy="beforeInteractive" src="/assets/js/gsap.min.js"></Script>
       <Script strategy="beforeInteractive" src="/assets/js/splitting.min.js"></Script>
       <Script strategy="beforeInteractive" src="/assets/js/isotope.pkgd.min.js"></Script>
-      <Script strategy="beforeInteractive" src="/assets/js/imgReveal/imagesloaded.pkgd.min.js"></Script>
+      <Script
+        strategy="beforeInteractive"
+        src="/assets/js/imgReveal/imagesloaded.pkgd.min.js"
+      ></Script>
       <Script src="/assets/js/scripts.js"></Script>
     </body>
   );
