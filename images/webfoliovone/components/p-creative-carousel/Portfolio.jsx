@@ -15,7 +15,7 @@ function Portfolio() {
   const fetchPortfolio = async () => {
     setLoading(true);
     try {
-      const response = await payloadClient.getPortfolioItems(1, 10);
+      const response = await payloadClient.getFeaPortfolioItems(1, 10);
       setData(response.docs || []);
     } catch (error) {
       console.error('Error fetching portfolio:', error);

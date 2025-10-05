@@ -13,6 +13,18 @@ export const payloadClient = {
         throw error;
     }
   },
+
+  getFeaPortfolioItems: async (page = 1, limit = 10) => {
+    try {
+        const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?limit=${limit}&page=${page}&sort=-createdAt`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching feaportfolio:', error);
+        throw error;
+    }
+  },
+
   getPortfolioBySlug: async (slug) => {
   try {
       const response = await fetch(`${PAYLOAD_API_URL}/api/feaportfolio?where[slug][equals]=${slug}&limit=1`);
