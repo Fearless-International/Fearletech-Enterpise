@@ -8,7 +8,7 @@ function About() {
           <div className="col-lg-5 valign">
             <div className="profile-img">
               <div className="img">
-                <img src="/assets/imgs/header/p20.jpg" alt="" />
+                <img src="/assets/imgs/header/p20.png" alt="" />
               </div>
               <span className="icon">
                 <img src="/assets/imgs/resume/icon1.png" alt="" />
