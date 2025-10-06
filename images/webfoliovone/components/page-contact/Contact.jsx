@@ -143,7 +143,7 @@ function Contact() {
                   borderRadius: '5px',
                   marginBottom: '20px'
                 }}>
-                  Thank you for your message! We'll get back to you soon.
+                  Thank you for your message! We will get back to you soon.
                 </div>
               )}
               
