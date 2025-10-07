@@ -21,8 +21,8 @@ function Next() {
                 </div>
                 <div>
                   <h6 className="sub-title fz-16 mb-5">Prev Project</h6>
-                  <a href="/project-details" className="fz-40 fw-600 stroke">
-                    OPT Media Agency
+                  <a href="#" className="fz-40 fw-600 stroke">
+                    WireMeshMfg Ltd App
                   </a>
                 </div>
               </div>
@@ -37,8 +37,8 @@ function Next() {
                 <div className="cont d-flex align-items-center">
                   <div>
                     <h6 className="sub-title fz-16 mb-5">Next Project</h6>
-                    <a href="/project-details" className="fz-40 fw-600 stroke">
-                      TH3 Web Design
+                    <a href="#" className="fz-40 fw-600 stroke">
+                      Pitstop Web App
                     </a>
                   </div>
                   <div>
