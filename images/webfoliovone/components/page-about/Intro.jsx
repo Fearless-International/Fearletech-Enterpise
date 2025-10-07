@@ -20,7 +20,7 @@ function Intro() {
           <div className="col-lg-6 valign">
             <div className="cont">
               <h3 className="mb-30">
-                I'm a versatile{' '}
+                I am a versatile{' '}
                 <span className="fw-200">digital professional</span> creating
                 exceptional <span className="fw-200">web solutions</span> &
                 brand experiences.

@@ -77,7 +77,7 @@ function Testimonials() {
                       <div className="content">
                         <div className="text">
                           <p className="fz-30">
-                            Francisco's ability to manage complex projects while delivering 
+                            His ability to manage complex projects while delivering 
                             high-quality results is remarkable. His database expertise and 
                             development skills made our academic systems more efficient.
                           </p>
