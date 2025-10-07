@@ -29,7 +29,7 @@ function Header() {
           <div className="col-12">
             <div className="text-center">
               <h1 className="text-u ls1 fz-80">
-                Our <span className="fw-200">Services I Offer</span>
+                Services <span className="fw-200"> I Offer</span>
               </h1>
             </div>
           </div>

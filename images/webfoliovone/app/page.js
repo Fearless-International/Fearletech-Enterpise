@@ -22,8 +22,8 @@ import Portfolio from '@/components/home-personal/Portfolio';
 export const metadata = {
   title: 'Francisco | Personal Portfolio',
   icons: {
-    icon: '/assets/imgs/favicon.ico',
-    shortcut: '/assets/imgs/favicon.ico',
+    icon: '/assets/imgs/favicon.png',
+    shortcut: '/assets/imgs/favicon.png',
     other: generateStylesheetObject([
       '/assets/css/plugins.css',
       '/assets/css/style.css',

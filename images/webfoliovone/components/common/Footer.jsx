@@ -80,7 +80,7 @@ function Footer() {
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
             <p className="fz-14">
-              © 2025 Website is Proudly Powered by{' '}
+              © 2025 Powered by{' '}
               <span className="underline main-color">
                 <a href="https://fearlessint.com" target="_blank">
                   Fearless.
