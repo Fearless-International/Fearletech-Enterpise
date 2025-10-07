@@ -25,7 +25,7 @@ function Testimonials() {
           <div className="col-lg-4 md-mb50">
             <div className="img-full">
               <div className="fit-img">
-                <img src="/assets/imgs/testim/bg.jpg" alt="" />
+                <img src="/assets/imgs/testim/p20.png" alt="" />
               </div>
               <div className="fix-img">
                 <img src="/assets/imgs/ar3.png" alt="" />
@@ -51,7 +51,7 @@ function Testimonials() {
                       <div className="content">
                         <div className="text">
                           <p className="fz-30">
-                            Working with Francisco was exceptional. His technical expertise 
+                             Working with Francisco was exceptional. His technical expertise 
                             and creative vision transformed our web presence. The attention 
                             to detail and professional delivery exceeded our expectations.
                           </p>
@@ -63,9 +63,9 @@ function Testimonials() {
                             </div>
                           </div>
                           <div className="ml-20">
-                            <h5>Enchill Duah</h5>
+                            <h5>Enchill Duahy</h5>
                             <span className="sub-title main-color">
-                              CEO, MediaGang
+                              Founder & CEO MediaGang
                             </span>
                           </div>
                         </div>
@@ -77,7 +77,7 @@ function Testimonials() {
                       <div className="content">
                         <div className="text">
                           <p className="fz-30">
-                            His ability to manage complex projects while delivering 
+                            Francisco ability to manage complex projects while delivering 
                             high-quality results is remarkable. His database expertise and 
                             development skills made our academic systems more efficient.
                           </p>
@@ -89,35 +89,9 @@ function Testimonials() {
                             </div>
                           </div>
                           <div className="ml-20">
-                            <h5>Danielson Kwame Klutsey</h5>
+                            <h5>Marc Dekruiffj</h5>
                             <span className="sub-title main-color">
-                              Head of Academics, IPMC
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="item">
-                      <div className="content">
-                        <div className="text">
-                          <p className="fz-30">
-                            The e-commerce platform Francisco built for us is outstanding. 
-                            His understanding of our business needs and technical execution 
-                            resulted in a seamless online shopping experience.
-                          </p>
-                        </div>
-                        <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
-                          <div>
-                            <div className="fit-img circle">
-                              <img src="/assets/imgs/testim/t1.jpg" alt="" />
-                            </div>
-                          </div>
-                          <div className="ml-20">
-                            <h5>Marc Dekruiff</h5>
-                            <span className="sub-title main-color">
-                              CEO, Aurora Ghana
+                              Founder & CEO Aurora CM Group ltd
                             </span>
                           </div>
                         </div>

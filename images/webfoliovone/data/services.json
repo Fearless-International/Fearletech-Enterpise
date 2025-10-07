@@ -15,20 +15,14 @@
   
   {
     "title": "Social Media Management",
-    "img": "/assets/imgs/serv-icons/7.png",
+    "img": "/assets/imgs/serv-icons/3.png",
     "desc": "Managing social media presence, creating engaging content, and growing your audience across multiple platforms with strategic campaigns.",
     "link": "/page-smmservices-details"
-  },
-  {
-    "title": "SEO & Digital Marketing",
-    "img": "/assets/imgs/serv-icons/8.png",
-    "desc": "Optimizing websites for search engines using RankMath, MailChimp, and implementing digital marketing strategies to increase online visibility.",
-    "link": "/page-services-details"
   },
   
   {
     "title": "Video Editing & Content Creation",
-    "img": "/assets/imgs/serv-icons/10.png",
+    "img": "/assets/imgs/serv-icons/4.png",
     "desc": "Professional video editing using Premiere Pro, After Effects, DaVinci Resolve, and InShot for engaging multimedia content creation.",
     "link": "/page-vidservices-details"
   }
