@@ -42,7 +42,7 @@ function Services() {
                   design with seamless user experience..
                 </p>
               </div>
-              <a href="/page-services-details" className="mt-40">
+              <a href="/page-uiuxservices-details" className="mt-40">
                 <span className="ti-arrow-top-right"></span>
               </a>
             </div>
@@ -66,7 +66,7 @@ function Services() {
                   and best practices for optimal performance.
                 </p>
               </div>
-              <a href="/page-services-details" className="mt-40">
+              <a href="/page-webservices-details" className="mt-40">
                 <span className="ti-arrow-top-right"></span>
               </a>
             </div>
@@ -88,7 +88,7 @@ function Services() {
                   SEO optimization and engaging social media management.
                 </p>
               </div>
-              <a href="/page-services-details" className="mt-40">
+              <a href="/page-smmservices-details" className="mt-40">
                 <span className="ti-arrow-top-right"></span>
               </a>
             </div>

@@ -1,26 +1,62 @@
 [
   {
-    "title": "Digital Product Design",
-    "img": "/assets/imgs/serv-icons/3.png",
-    "desc": "Live workshop where we define the main problems and challenges before building a strategic plan moving forward.",
-    "link": "/page-services-details"
-  },
-  {
-    "title": "Web Developments",
+    "title": "Web Development",
     "img": "/assets/imgs/serv-icons/4.png",
-    "desc": "Live workshop where we define the main problems and challenges before building a strategic plan moving forward.",
+    "desc": "Building responsive, scalable web applications using React, Node.js, Angular, Laravel, and modern frameworks for optimal performance and user experience.",
+    "link": "/page-webservices-details"
+  },
+  {
+    "title": "Graphic Design & Branding",
+    "img": "/assets/imgs/serv-icons/5.png",
+    "desc": "Creating compelling visual identities, logos, brochures, and complete brand identity systems including style guides and marketing materials.",
     "link": "/page-services-details"
   },
   {
-    "title": "Branding Design",
-    "img": "/assets/imgs/serv-icons/5.png",
-    "desc": "Live workshop where we define the main problems and challenges before building a strategic plan moving forward.",
+    "title": "UI/UX Design",
+    "img": "/assets/imgs/serv-icons/3.png",
+    "desc": "Designing intuitive and beautiful user interfaces that combine clean visual design with seamless user experience using Figma and Adobe tools.",
+    "link": "/page-uiuxservices-details"
+  },
+  {
+    "title": "Database Administration",
+    "img": "/assets/imgs/serv-icons/6.png",
+    "desc": "Designing and managing robust database solutions with Oracle, SQL Server, MongoDB, and Oracle APEX for optimal data performance and security.",
     "link": "/page-services-details"
   },
   {
-    "title": "UI-UX Design",
-    "img": "/assets/imgs/serv-icons/5.png",
-    "desc": "Live workshop where we define the main problems and challenges before building a strategic plan moving forward.",
+    "title": "Social Media Management",
+    "img": "/assets/imgs/serv-icons/7.png",
+    "desc": "Managing social media presence, creating engaging content, and growing your audience across multiple platforms with strategic campaigns.",
+    "link": "/page-smmservices-details"
+  },
+  {
+    "title": "SEO & Digital Marketing",
+    "img": "/assets/imgs/serv-icons/8.png",
+    "desc": "Optimizing websites for search engines using RankMath, MailChimp, and implementing digital marketing strategies to increase online visibility.",
+    "link": "/page-services-details"
+  },
+  {
+    "title": "E-commerce Solutions",
+    "img": "/assets/imgs/serv-icons/9.png",
+    "desc": "Building custom e-commerce platforms with integrated payment gateways, inventory management systems, and seamless shopping experiences.",
+    "link": "/page-services-details"
+  },
+  {
+    "title": "Video Editing & Content Creation",
+    "img": "/assets/imgs/serv-icons/10.png",
+    "desc": "Professional video editing using Premiere Pro, After Effects, DaVinci Resolve, and InShot for engaging multimedia content creation.",
+    "link": "/page-vidservices-details"
+  },
+  {
+    "title": "Project Management",
+    "img": "/assets/imgs/serv-icons/11.png",
+    "desc": "Managing complex projects from concept to completion, coordinating teams, and ensuring timely delivery of high-quality digital solutions.",
+    "link": "/page-services-details"
+  },
+  {
+    "title": "IT Consulting",
+    "img": "/assets/imgs/serv-icons/12.png",
+    "desc": "Providing expert IT consultation, system analysis, and strategic technology solutions to help businesses optimize their digital infrastructure.",
     "link": "/page-services-details"
   }
 ]
