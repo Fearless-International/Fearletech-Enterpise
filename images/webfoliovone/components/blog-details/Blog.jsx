@@ -141,7 +141,7 @@ function BlogDetails({ slug }) {
                       </div>
                       <div>
                         {blogPost.tags.map((tagItem, index) => (
-                          <a key={index} href="/blog-classic">{tagItem.tag}</a>
+                          <a key={index} href="#">{tagItem.tag}</a>
                         ))}
                       </div>
                     </div>
@@ -194,7 +194,7 @@ function BlogDetails({ slug }) {
               <div className="mb-60">
                 <h3>Leave a comment</h3>
               </div>
-              <form id="contact-form" method="post" action="contact.php">
+              <form id="contact-form" method="post" action="#">
                 <div className="messages"></div>
                 <div className="controls row">
                   <div className="col-lg-6">

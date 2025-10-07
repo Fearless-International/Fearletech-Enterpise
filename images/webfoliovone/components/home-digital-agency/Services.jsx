@@ -15,14 +15,15 @@ function Services() {
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
-              <h6 className="title-bord mb-30">Our Services</h6>
+              <h6 className="title-bord mb-30">My Services</h6>
             </div>
             <div className="col-lg-8">
               <div className="text">
                 <h4>
-                  From the inception of a project to its completion, we employ a
-                  comprehensive and holistic approach that ensures all aspects
-                  and stages are thoughtfully and thoroughly addressed.
+                   Versatile digital professional with 9 years of experience in web 
+development, graphic design, and project management. I specialize in 
+transforming complex technical challenges into elegant solutions through 
+system analysis, application development, and database technology. 
                 </h4>
               </div>
             </div>

@@ -45,6 +45,15 @@ function About() {
                   projects that exceed expectations and drive business growth.
                 </p>
                 
+                <a 
+                  href="https://drive.google.com/file/d/1qQMxbi1Q5UBhueiTWn7zkqJcz7lgo-fK/view?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="butn butn-md butn-bord radius-30 mt-40"
+                >
+                  <span>View CV</span>
+                </a>
+                
                 <div className="numbers mt-50">
                   <div className="row lg-marg">
                     <div className="col-md-6">
