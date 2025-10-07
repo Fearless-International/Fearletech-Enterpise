@@ -7,20 +7,20 @@ function Footer() {
         <div className="row justify-content-between">
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
-              <img src="/assets/imgs/logo-light.png" alt="" />
+              <img src="/assets/imgs/asset4.png" alt="" />
             </div>
           </div>
           <div className="col-lg-4">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Contact</h6>
               <h6 className="p-color fw-400">
-                5919 Trussville Crossings <br /> Pkwy, Birmingham
+                Accra <br /> Ghana
               </h6>
               <h6 className="mt-30 mb-15">
-                <a href="#0">Hello@webfolio.com</a>
+                <a href="#0">info@fearlessint.com</a>
               </h6>
               <a href="#0" className="underline">
-                <span className="fz-22 main-color">+2 456 (343) 24 45</span>
+                <span className="fz-22 main-color">+233 55 086 6710</span>
               </a>
             </div>
           </div>
@@ -34,9 +34,9 @@ function Footer() {
                 <li className="mb-15">
                   <a href="/page-services">Services</a>
                 </li>
-                <li className="mb-15">
+                {/*<li className="mb-15">
                   <a href="/blog-grid-sidebar">Blog</a>
-                </li>
+                </li>*/}
                 <li>
                   <a href="/page-contact">Contact</a>
                 </li>
@@ -80,10 +80,10 @@ function Footer() {
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
             <p className="fz-14">
-              © 2024 Webfolio is Proudly Powered by{' '}
+              © 2025 Website is Proudly Powered by{' '}
               <span className="underline main-color">
-                <a href="https://themeforest.net/user/UiCamp" target="_blank">
-                  UiCamp
+                <a href="https://fearlessint.com" target="_blank">
+                  Fearless.
                 </a>
               </span>
             </p>
