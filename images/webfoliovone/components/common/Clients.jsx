@@ -40,7 +40,7 @@ function Clients() {
           <div className="col-lg-6 col-md-10">
             <div className="sec-head text-center mb-80">
               <h3>
-                We&apos;re proud to work with <br /> a{' '}
+                We&apos;re proud to work with <br /> {' '}
                 <span className="opacity-7">diverse range of companies.</span>
               </h3>
             </div>
@@ -56,35 +56,35 @@ function Clients() {
             <SwiperSlide>
               <div className="item">
                 <div className="img icon-img-100">
-                  <img src="/assets/imgs/brands/c1.svg" alt="" />
+                  <img src="/assets/imgs/brands/d1.svg" alt="" />
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="item">
                 <div className="img icon-img-100">
-                  <img src="/assets/imgs/brands/c2.svg" alt="" />
+                  <img src="/assets/imgs/brands/d2.svg" alt="" />
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="item">
                 <div className="img icon-img-100">
-                  <img src="/assets/imgs/brands/c3.svg" alt="" />
+                  <img src="/assets/imgs/brands/d3.svg" alt="" />
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="item">
                 <div className="img icon-img-100">
-                  <img src="/assets/imgs/brands/c4.svg" alt="" />
+                  <img src="/assets/imgs/brands/d4.svg" alt="" />
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="item">
                 <div className="img icon-img-100">
-                  <img src="/assets/imgs/brands/c5.svg" alt="" />
+                  <img src="/assets/imgs/brands/d5.svg" alt="" />
                 </div>
               </div>
             </SwiperSlide>
@@ -93,7 +93,7 @@ function Clients() {
         <div className="sec-bottom mt-100">
           <div className="main-bg d-flex align-items-center">
             <h6 className="fz-14 fw-400">
-              More than <span className="fw-400"> 200+ companies</span>
+              More than <span className="fw-400"> 20+ companies</span>
               trusted us worldwide
             </h6>
           </div>
