@@ -28,7 +28,7 @@ function Testimonials() {
                 <img src="/assets/imgs/testim/bg.jpg" alt="" />
               </div>
               <div className="fix-img">
-                <img src="/assets/imgs/arw1.png" alt="" />
+                <img src="/assets/imgs/ar3.png" alt="" />
               </div>
             </div>
           </div>
@@ -51,10 +51,9 @@ function Testimonials() {
                       <div className="content">
                         <div className="text">
                           <p className="fz-30">
-                            I have been hiring people in this space for a number
-                            of years and I have never seen this level of
-                            professionalism. It really feels like you are
-                            working with a team that can get the job done.
+                            Working with Francisco was exceptional. His technical expertise 
+                            and creative vision transformed our web presence. The attention 
+                            to detail and professional delivery exceeded our expectations.
                           </p>
                         </div>
                         <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
@@ -64,9 +63,9 @@ function Testimonials() {
                             </div>
                           </div>
                           <div className="ml-20">
-                            <h5>Adam Beckley</h5>
+                            <h5>Enchill Duah</h5>
                             <span className="sub-title main-color">
-                              Founder & CEO
+                              CEO, MediaGang
                             </span>
                           </div>
                         </div>
@@ -78,10 +77,9 @@ function Testimonials() {
                       <div className="content">
                         <div className="text">
                           <p className="fz-30">
-                            I have been hiring people in this space for a number
-                            of years and I have never seen this level of
-                            professionalism. It really feels like you are
-                            working with a team that can get the job done.
+                            Francisco's ability to manage complex projects while delivering 
+                            high-quality results is remarkable. His database expertise and 
+                            development skills made our academic systems more efficient.
                           </p>
                         </div>
                         <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
@@ -91,9 +89,35 @@ function Testimonials() {
                             </div>
                           </div>
                           <div className="ml-20">
-                            <h5>Adam Beckley</h5>
+                            <h5>Danielson Kwame Klutsey</h5>
                             <span className="sub-title main-color">
-                              Founder & CEO
+                              Head of Academics, IPMC
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="item">
+                      <div className="content">
+                        <div className="text">
+                          <p className="fz-30">
+                            The e-commerce platform Francisco built for us is outstanding. 
+                            His understanding of our business needs and technical execution 
+                            resulted in a seamless online shopping experience.
+                          </p>
+                        </div>
+                        <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
+                          <div>
+                            <div className="fit-img circle">
+                              <img src="/assets/imgs/testim/t1.jpg" alt="" />
+                            </div>
+                          </div>
+                          <div className="ml-20">
+                            <h5>Marc Dekruiff</h5>
+                            <span className="sub-title main-color">
+                              CEO, Aurora Ghana
                             </span>
                           </div>
                         </div>

@@ -9,13 +9,10 @@ function Intro() {
             <div className="img md-mb80">
               <div className="row">
                 <div className="col-6">
-                  <img src="/assets/imgs/intro/i1.jpg" alt="" />
-                  <div className="img-icon">
-                    <img src="/assets/imgs/arw0.png" alt="" />
-                  </div>
+                  <img src="/assets/imgs/intro/f2.png" alt="" />
                 </div>
                 <div className="col-6 mt-40">
-                  <img src="/assets/imgs/intro/i2.jpg" alt="" />
+                  <img src="/assets/imgs/intro/f4.png" alt="" />
                 </div>
               </div>
             </div>
@@ -23,20 +20,17 @@ function Intro() {
           <div className="col-lg-6 valign">
             <div className="cont">
               <h3 className="mb-30">
-                Wfolio is a full-service{' '}
-                <span className="fw-200">creative studio</span> creating
-                beautiful <span className="fw-200">digital experiences</span> &
-                products.
+                I'm a versatile{' '}
+                <span className="fw-200">digital professional</span> creating
+                exceptional <span className="fw-200">web solutions</span> &
+                brand experiences.
               </h3>
               <p>
-                Our design services starts and ends with a best-in-class
-                experience strategy that builds brands. Open an online store and
-                become an international seller. Your customers will enjoy
-                shopping online!
+                With 9 years of experience in web development, graphic design, and project management, I transform complex technical challenges into elegant solutions. From building responsive websites to creating compelling brand identities, I deliver projects that drive business growth.
               </p>
               <a href="/page-services" className="underline main-color mt-40">
                 <span className="text">
-                  Our Services <i className="ti-arrow-top-right"></i>
+                  My Services <i className="ti-arrow-top-right"></i>
                 </span>
               </a>
             </div>
