@@ -99,15 +99,15 @@ function Contact() {
           <div className="col-lg-4 valign">
             <div className="sec-head info-box full-width md-mb80">
               <div className="phone fz-30 fw-600 underline main-color">
-                <a href="#0">+1 840 841 25 69</a>
+                <a href="#0">+233 55 086 6710</a>
               </div>
               <div className="morinfo mt-50 pb-30 bord-thin-bottom">
                 <h6 className="mb-15">Address</h6>
-                <p>Besòs 1, 08174 Sant Cugat del Vallès, Barcelona</p>
+                <p>Accra, Ghana</p>
               </div>
               <div className="morinfo mt-30 pb-30 bord-thin-bottom">
                 <h6 className="mb-15">Email</h6>
-                <p>Support@UiCamp.com</p>
+                <p>info@fearlessint.com</p>
               </div>
 
               <div className="social-icon mt-50">
