@@ -31,9 +31,8 @@ function About() {
                 <h4 className="mb-30">
                   I&apos;m{' '}
                   <span className="fw-200">
-                    A Creative Director and Innovative Tech Leader
-                  </span>{' '}
-                  from Benin, working in web development, graphic design, and 
+                    a Creative Director and Innovative Tech Leader
+                  </span>{' '}from Benin, working in web development, graphic design, and 
                   digital solutions.
                 </h4>
                 <p>
