@@ -308,7 +308,7 @@ function BlogDetails({ slug }) {
                   <h6 className="title-widget">Tags</h6>
                   <div>
                     {blogPost.tags.map((tagItem, index) => (
-                      <a key={index} href="/blog-grid-sidebar">{tagItem.tag}</a>
+                      <a key={index} href="#">{tagItem.tag}</a>
                     ))}
                   </div>
                 </div>
