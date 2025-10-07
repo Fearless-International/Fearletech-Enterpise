@@ -2,14 +2,16 @@ import React from 'react';
 
 function Marq() {
   const items = [
-    'Web Design',
-    'Art Director',
-    'Brand Strategy',
+    'Web Development',
+    'Graphic Design',
+    'Brand Identity',
     'UI/UX Design',
-    'Digital Marketing',
-    'Web Developement',
-    'Seo Mackting',
-    'Product Desgin',
+    'Social Media Management',
+    'Database Administration',
+    'Project Management',
+    'Content Creation',
+    'Video Editing',
+    'E-commerce Solutions',
   ];
   return (
     <section className="marq">

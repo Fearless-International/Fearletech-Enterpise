@@ -7,10 +7,10 @@ function Services() {
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Our Specialize</span>
+              <span className="sub-title main-color mb-5">Expertise</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
                 <span className="rotate-text">
-                  Featured <span className="fw-200">Services.</span>
+                  Featured <span className="fw-200">My Services.</span>
                 </span>
               </h3>
             </div>
@@ -38,8 +38,8 @@ function Services() {
                   <span className="tag">Development</span>
                 </div>
                 <p>
-                  We always ensure that it combines a clean and beautiful visual
-                  design.
+                  I always ensure that it combines a clean and beautiful visual
+                  design with seamless user experience..
                 </p>
               </div>
               <a href="/page-services-details" className="mt-40">
@@ -52,15 +52,18 @@ function Services() {
               <div className="icon-img-60 opacity-5 mb-40">
                 <img src="/assets/imgs/serv-icons/4.png" alt="" />
               </div>
-              <h5>Brand Strategy</h5>
+              <h5>Website Development</h5>
               <div className="text mt-40">
                 <div className="mb-10">
                   <span className="tag">UI/UX</span>
                   <span className="tag">Development</span>
+                  <span className="tag">Node.js</span>
+                  <span className="tag">Angular</span>
+                  <span className="tag">Laravel</span>
                 </div>
                 <p>
-                  We always ensure that it combines a clean and beautiful visual
-                  design.
+                  Building responsive, scalable web applications using modern frameworks 
+                  and best practices for optimal performance.
                 </p>
               </div>
               <a href="/page-services-details" className="mt-40">
@@ -73,15 +76,16 @@ function Services() {
               <div className="icon-img-60 opacity-5 mb-40">
                 <img src="/assets/imgs/serv-icons/5.png" alt="" />
               </div>
-              <h5>SEO / Marketing</h5>
+              <h5>SEO / Marketing / Social Media Management</h5>
               <div className="text mt-40">
                 <div className="mb-10">
-                  <span className="tag">UI/UX</span>
-                  <span className="tag">Development</span>
+                  <span className="tag">Rank MathX</span>
+                  <span className="tag">MailChimp</span>
+                  <span className="tag">Inshot</span>
                 </div>
                 <p>
-                  We always ensure that it combines a clean and beautiful visual
-                  design.
+                   I always ensure your audience keeps growing through strategic 
+                  SEO optimization and engaging social media management.
                 </p>
               </div>
               <a href="/page-services-details" className="mt-40">

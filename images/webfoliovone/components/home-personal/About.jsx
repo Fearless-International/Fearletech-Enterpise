@@ -31,26 +31,28 @@ function About() {
                 <h4 className="mb-30">
                   I&apos;m{' '}
                   <span className="fw-200">
-                    Creative Director and UI-UX Designer
+                    Creative Director and Innovative Tech Leader
                   </span>{' '}
-                  from Sydney, Australia, working in web development and print
-                  media.
+                  from Benin, working in web development, graphic design, and 
+                  digital solutions.
                 </h4>
                 <p>
-                  I enjoy turning complex problems into simple, beautiful and
-                  intuitive designs. My aim is to bring across your message and
-                  identity in the most creative way. I created web design for
-                  many famous brand companies.
+                  Versatile digital professional with 9 years of experience in web 
+                  development, graphic design, and project management. I specialize in 
+                  transforming complex technical challenges into elegant solutions through 
+                  system analysis, application development, and database technology. 
+                  My strength lies in bridging creativity and technical expertise to deliver 
+                  projects that exceed expectations and drive business growth.
                 </p>
-
+                
                 <div className="numbers mt-50">
                   <div className="row lg-marg">
                     <div className="col-md-6">
                       <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
                         <div>
-                          <h3 className="fw-300 mb-10">100%</h3>
+                          <h3 className="fw-300 mb-10">9+</h3>
                           <h6 className="p-color sub-title">
-                            Clients Satisfaction
+                            Years Experience
                           </h6>
                         </div>
                         <div className="ml-auto">
@@ -63,7 +65,7 @@ function About() {
                     <div className="col-md-6">
                       <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
                         <div>
-                          <h3 className="fw-300 mb-10">6700</h3>
+                          <h3 className="fw-300 mb-10">50+</h3>
                           <h6 className="p-color sub-title">
                             Projects Completed
                           </h6>
