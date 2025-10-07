@@ -44,7 +44,6 @@ export default function Home() {
             <Numbers />
             <Testimonials />
             <Clients />
-            <Blog />
             <Marq2 />
           </main>
           <Footer />
