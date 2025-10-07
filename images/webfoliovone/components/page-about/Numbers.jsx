@@ -24,7 +24,7 @@ function Numbers() {
           <div className="col-lg-4 col-md-6">
             <div className="item text-center">
               <div className="o-hidden">
-                <h3 className="stroke">34 +</h3>
+                <h3 className="stroke">1 +</h3>
               </div>
               <h6 className="p-color sub-title">Awards Achievement</h6>
             </div>

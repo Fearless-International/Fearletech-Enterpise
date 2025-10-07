@@ -45,10 +45,7 @@ export default function Home() {
             <Intro />
             <Numbers />
             <Services />
-            <Team />
             <Testimonials />
-            <Clients />
-            <Blog />
             <Marq2 />
           </main>
           <Footer />
