@@ -21,7 +21,7 @@ function Header() {
   return (
     <div
       className="header header-personal valign bg-img"
-      data-background="/assets/imgs/header/p006.png"
+      data-background="/assets/imgs/header/p007.png"
       data-overlay-dark="2"
     >
       <div className="container ontop">
@@ -35,15 +35,16 @@ function Header() {
                 Hello! there
               </h6>
               <h1 className="fw-700 mb-10">
-                I&apos;m Oliver <span className="main-color">Jackson</span>
+                I&apos;m Marius-Junior <span className="main-color">FRANCISCO</span>
               </h1>
-              <h3>I am a product designer.</h3>
+              <h3>I am a Web Developer and Media Specialist.</h3>
               <div className="row">
                 <div className="col-lg-9">
                   <div className="text mt-30">
                     <p>
-                      From the inception of a project to its completion, we
-                      employ a comprehensive and holistic approach.
+                       I specialize in 
+transforming complex technical challenges into elegant solutions through 
+system analysis, application development, and database technology. 
                     </p>
                   </div>
                   <div className="d-flex align-items-center mt-60">
@@ -68,15 +69,15 @@ function Header() {
         <div className="info d-flex align-items-center justify-content-end mt-100">
           <div className="item">
             <h6 className="sub-title mb-10">Email :</h6>
-            <span className="p-color">Webfolio.Info@gmail.com</span>
+            <span className="p-color">info@fearlessint.com</span>
           </div>
           <div className="item">
             <h6 className="sub-title mb-10">Phone :</h6>
-            <span className="p-color">+2 456 (343) 24 45</span>
+            <span className="p-color">+233 55 086 6710</span>
           </div>
           <div className="item">
             <h6 className="sub-title mb-10">Address :</h6>
-            <span className="p-color">5919 Trussville Pkwy, Birmingham</span>
+            <span className="p-color">Accra, Ghana</span>
           </div>
         </div>
       </div>
